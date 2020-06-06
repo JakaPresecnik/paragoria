@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans+Condensed:wght@300;700&family=Open+Sans:wght@300&display=swap');
 
 body {
   height: 100vh;
@@ -22,6 +22,8 @@ body {
 
 
   .homepage-container {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     background: url(../img/background.png) no-repeat center;
     background-size: 100% 100%;
@@ -64,7 +66,7 @@ body {
   header {
     max-width: 800px;
     margin: auto;
-    padding: 1em;
+    padding: 0.3em;
     text-align: center;
   }
   header img {
@@ -93,6 +95,7 @@ body {
   nav a {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.05em;
+    font-weight: 700;
     text-decoration: none;
     padding: 0.8em;
     color: #222;
@@ -127,11 +130,13 @@ body {
   footer {
     text-align: center;
     width: 100%;
+    margin: auto; 
   }
 
   footer ul {
-    list-style-type: none;
+    list-style: none;
     margin-bottom: 0;
+    padding-left: 0;
   }
 
   footer li {

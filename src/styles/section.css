@@ -1,0 +1,176 @@
+section {
+    text-align: center;
+    color: #afafaf;
+}
+
+.section-header {
+    padding: 3em;
+    margin: 1.5em 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+section h2 {
+    font-family: 'Metal Mania', cursive;
+    letter-spacing: 0.01em;
+    font-size: 2.2em;
+    margin: 0.1em;
+}
+
+.sub-text {
+    font-size: 1.1em;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.5em auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+input, textarea {
+    background-color: #afafaf;
+    color: #000;
+    opacity: 0.6;
+    border: 1px solid #555;
+    font-size: 1em;
+    padding: 0.3em;
+    margin: 0.4em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input:focus, textarea:focus {
+    border: 1px solid #a52121;
+    background-color: #a08f8f;
+}
+input:hover, textarea:hover {
+    border: 1px solid #a52121;
+    box-shadow: 2px 2px 8px #632828, -2px -2px 8px #632828;
+}
+input {
+    flex: 1;
+}
+textarea {
+    width: 100%;
+    height: 6.8em;
+}
+form button {
+    width: 7em;
+    padding: 0.5em;
+    font-size: 1em;
+    color: #afafaf;
+    background-color: #632828;
+    border: none;
+    border-radius: 3px;
+    margin: 0.5em;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: #a52121;
+    box-shadow: 2px 2px 8px #632828, -2px -2px 8px #632828;
+}
+form button:active {
+    position:relative;
+    background-color: #882929;
+    top: 1px;
+    left: 1px;
+}
+.section-footer {
+    line-height: 1.2em;
+    color: #afafaf;
+}
+.section-footer h4 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+}
+.section-footer p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 0.5em;
+    font-size: 0.8em;
+}
+
+/* BIO */
+.bio-disc-lu {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lineup-disc {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lineup, .discography {
+    width: 280px;
+    margin: 1em;
+    padding: 0 1em 0.5em 1em;
+    border: 1px solid #632828;
+    background-color: rgba(99, 40, 40, 0.3);
+}
+
+.lineup .header, .discography .header {
+    font-family: 'Metal Mania', cursive;
+    position: relative;
+    top: -1em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+.logo {
+    position: relative;
+    top: 1.7em;
+    width: 175px;
+}
+.bio {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    max-width: 700px;
+    text-align: justify;
+    padding: 1em;
+    margin: 1em;
+}
+
+.bio figure {
+    margin: 2em 0.7em;
+}
+
+.bio img {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.bio figcaption {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+.headpara {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+}
+
+
+.subpara {
+    line-height: 0em;
+    color: #555;
+    padding-bottom: 0.7em;;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+}
+
+.discography figure img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 740px) {
+    .bio figure {
+        display: none;
+    }
+}
