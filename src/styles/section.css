@@ -158,9 +158,10 @@ form button:active {
 
 
 .subpara {
-    line-height: 0em;
+    display: block;
     color: #555;
-    padding-bottom: 0.7em;;
+    padding-top: 0em;
+    padding-bottom: 0.7em;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
 }
@@ -169,8 +170,28 @@ form button:active {
     width: 100%;
 }
 
+.img-belt {
+    width: 80%;
+    max-width: 1000px;
+    margin: 2em auto;
+}
+.img-belt img {
+    opacity: 0.7;
+}
+.video-belt {
+    display: flex;
+    justify-content: center;
+}
+.img-belt img:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 7px #632828, -2px -2px 7px #632828;
+}
+
 @media only screen and (max-width: 740px) {
     .bio figure {
+        display: none;
+    }
+    .video-belt {
         display: none;
     }
 }

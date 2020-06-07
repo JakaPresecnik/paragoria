@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Booking from './components/Booking';
 import News from './components/News';
 import Biography from './components/Biography';
+import Visuals from './components/Visuals';
 
 function App () {
  return ( 
@@ -22,6 +23,7 @@ function App () {
             <Route path='/' exact component={Header} />
             <Route path='/news' component={News} />
             <Route path='/biography' component={Biography} />
+            <Route path='/visuals' component={Visuals} />
             <Route path='/booking' component={Booking} />
           </Switch>
           <ReactPlayer url='https://soundcloud.com/on-parole/paragoria-from-carcass-to-soil' playing={true} width='70%' height='70px' style={{margin: '2em auto', maxWidth: '500px'}}/>
