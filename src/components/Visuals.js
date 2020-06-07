@@ -1,13 +1,15 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import Gallery from "react-photo-gallery";
 import ReactPlayer from 'react-player';
+import ReactLoading from "react-loading";
 
 import images from '../utils/helper';
 
 function Visuals () {
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
+    const [loaded, setLoaded] = useState(false)
 
     const openLightbox = useCallback((event, { photo, index }) => {
         setCurrentImage(index);
@@ -24,8 +26,16 @@ function Visuals () {
         setViewerIsOpen(true);
       }, []);
 
+    useEffect(() => {
+    setTimeout(() => {
+        fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(response => response.json())
+        .then(json => setLoaded(true));
+        }, 1200);
+    })
+
     return (
-        <section>
+        loaded ? (<section>
             <div className='section-header'>
                 <h2>VISUALS</h2>
             </div>
@@ -53,7 +63,9 @@ function Visuals () {
                 ) : null}
             </ModalGateway>
             
-        </section>
+        </section>) : (
+            <ReactLoading type={"bars"} color={"#632828"} width={230} className='loading'/>
+        )
     )
 }
 

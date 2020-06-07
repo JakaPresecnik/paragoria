@@ -1,1 +1,2 @@
-Booking: send email php
+- Booking: send email php
+- News: bo verjetno loaderja treba nastavit
