@@ -190,6 +190,20 @@ form button:active {
     margin: auto;
 }
 
+.news {
+    max-width: 900px;
+    margin: auto;
+    padding: 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+}
+.news .date {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #555;
+}
+
 @media only screen and (max-width: 740px) {
     .bio figure {
         display: none;

@@ -1,2 +1,3 @@
 - Booking: send email php
 - News: bo verjetno loaderja treba nastavit
+- Nav, App: briši 'paragoria/' - nastavljeno za potrebe github paga 

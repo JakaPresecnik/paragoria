@@ -2,7 +2,7 @@ import React from 'react';
 
 import logo from '../img/logo.png';
 import band from '../img/pic99.jpg';
-import decomposition from '../img/decomposition_of_mind.png';
+import decomposition from '../img/decomposition_of_mind.jpg';
 import ashes from '../img/from_the_ashes.jpg';
 
 function Biography () {
