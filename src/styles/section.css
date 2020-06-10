@@ -178,7 +178,7 @@ form button:active {
 .img-belt img {
     opacity: 0.7;
 }
-.video-belt {
+.video-belt, .news-video {
     display: flex;
     justify-content: center;
 }
@@ -196,12 +196,18 @@ form button:active {
     padding: 2em;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
+
 }
 .news .date {
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.2em;
     color: #555;
+}
+.news-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 740px) {
@@ -210,5 +216,8 @@ form button:active {
     }
     .video-belt {
         display: none;
+    }
+    .news-image {
+      height: 150px;
     }
 }
