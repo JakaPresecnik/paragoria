@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0fdf5ceaa55ccbd990148ce9d4557a20",
+    "revision": "1fd2b8069005efcb99a61097eeff34e3",
     "url": "/paragoria/index.html"
   },
   {
-    "revision": "a19f9690289f2cd2cf90",
-    "url": "/paragoria/static/css/main.7bf2e7df.chunk.css"
+    "revision": "19cdfd921729b9bede8b",
+    "url": "/paragoria/static/css/main.7b2b23e7.chunk.css"
   },
   {
-    "revision": "b8548d6bf40c5a46f749",
-    "url": "/paragoria/static/js/13.4c4d3b50.chunk.js"
+    "revision": "63ec13dcff19c6fd271d",
+    "url": "/paragoria/static/js/13.76b59239.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/paragoria/static/js/13.4c4d3b50.chunk.js.LICENSE.txt"
+    "url": "/paragoria/static/js/13.76b59239.chunk.js.LICENSE.txt"
   },
   {
     "revision": "12f845eb56dea185fa51",
     "url": "/paragoria/static/js/14.c5aec254.chunk.js"
   },
   {
-    "revision": "a19f9690289f2cd2cf90",
-    "url": "/paragoria/static/js/main.ea8bfce8.chunk.js"
+    "revision": "19cdfd921729b9bede8b",
+    "url": "/paragoria/static/js/main.40ef8d69.chunk.js"
   },
   {
     "revision": "b18cee98c125f5be969a",
