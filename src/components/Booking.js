@@ -50,7 +50,7 @@ function Booking () {
                 <h2>BOOKING AND LABEL CONTACT</h2>
                 <p className='sub-text'> Just send us a message here and we will respond back to you as soon as possible!</p>
             </div>
-            <form>
+            <form onSubmit={e => handleSubmit(e)}>
                 <input onChange={(e) => {setName(e.target.value)}}
                   type='text'
                   value={name}
@@ -64,7 +64,7 @@ function Booking () {
                   placeholder='Surname'
                   required />
                 <input onChange={(e) => {setEmail(e.target.value)}}
-                  type='text'
+                  type='email'
                   value={email}
                   name='email'
                   placeholder='Email'
@@ -74,7 +74,7 @@ function Booking () {
                   name='message'
                   placeholder='Describe your wishes / interests...'
                   required />
-                <button onClick={e => handleSubmit(e)} disabled={!name || !surname || !email || !message}>SEND</button>
+                <button type='submit' disabled={!name || !surname || !email || !message}>SEND</button>
                 <button onClick={e => clearAll(e)} disabled={!name && !surname && !email && !message}>CLEAR</button>
             </form>
             <div className='section-footer'>
