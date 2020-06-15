@@ -1,8 +1,0 @@
-- Booking:
-  - nastavi pravi Email!
-  - (verjetno ne bo treba) public/index.html spremeni  user id v emailjs.init("id") line 32
-
-- News:
-  - bo verjetno loaderja treba nastavit
-
-- Nav, App: briši 'paragoria/' - nastavljeno za potrebe github paga
