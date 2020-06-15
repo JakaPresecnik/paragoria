@@ -48,7 +48,7 @@ function Booking () {
         <section className='booking'>
             <div className='section-header'>
                 <h2>BOOKING AND LABEL CONTACT</h2>
-                <p className='sub-text'> Just send us a message here and we will respond back to you as soon as possible!</p>
+                <p> Just send us a message here and we will respond back to you as soon as possible!</p>
             </div>
             <form onSubmit={e => handleSubmit(e)}>
                 <input onChange={(e) => {setName(e.target.value)}}
