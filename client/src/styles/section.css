@@ -210,7 +210,6 @@ form button:active {
   object-fit: cover;
 }
 
-
 @media only screen and (max-width: 740px) {
     .bio figure {
         display: none;
