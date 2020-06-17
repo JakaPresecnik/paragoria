@@ -1,0 +1,66 @@
+.adding {
+    padding: 1.5em 0;
+    margin: 2em auto;
+    max-width: 800px;
+}
+.adding select {
+    background: #afafaf;
+    width: 268px;
+    margin-bottom: 1em;
+    padding: 5px;
+    font-size: 1em;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    
+}
+.news-form {
+    max-width: 700px;
+}
+
+.preview {
+    width: 90%;
+    padding: 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 100px;
+    z-index: 1;
+    background-color: #000;
+}
+
+.preview .date {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #555;
+}
+
+.preview .preview-btn {
+    width: 7em;
+    padding: 0.5em;
+    font-size: 1.1em;
+    color: #afafaf;
+    background-color: #632828;
+    border: none;
+    border-radius: 3px;
+    margin: 2em 0 0.1em 0;
+}
+
+.preview button:hover {
+    cursor: pointer;
+    background-color: #a52121;
+    box-shadow: 2px 2px 8px #632828, -2px -2px 8px #632828;
+} 
+
+.close {
+    float: right;
+    margin-top: 0;
+    background-color: #632828;
+    color: #afafaf;
+    border: none;
+    border-radius: 3px;
+}
