@@ -11,6 +11,26 @@ class AddNews extends Component {
     linkUrl: null,
     description: null,
   }
+
+  postNews = async (url = '', data = {}) => {
+    console.log('data', data)
+    const res = await fetch (url, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    try {
+      const newData = await res.json();
+      console.log('newData', newData);
+      return newData;
+    }catch(err) {
+      console.log('Error: ', err);
+    }
+  }
+
   componentDidMount() {
     const monthArray = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
     const today = new Date();
@@ -29,6 +49,17 @@ class AddNews extends Component {
   handleDescriptionChange(e) {
     this.setState({description: e.target.value})
   }
+  handlePostNews() {
+    const data = {
+      date: this.state.date,
+      type: this.state.type,
+      linkUrl: this.state.linkUrl,
+      description: this.state.description,
+    }
+    this.postNews('/addNews', data)
+  }
+
+
 
   render() {
     const {showPreview, type, linkUrl, description, date} = this.state;
@@ -65,7 +96,7 @@ class AddNews extends Component {
             <label htmlFor='link' style={{width: '100%'}}>Opis dogodka, napoved dogodka, datum, lokacija, kje, kdaj, zakaj...:</label>
             <textarea onChange={e => this.handleDescriptionChange(e)} placeholder='Text Description...'/>
 
-            <button>DODAJ</button>
+            <button disabled={!type || !linkUrl || !description} onClick={e => this.handlePostNews()}>DODAJ</button>
             <button onClick={e => this.handleShowPreview(e)} className='preview-btn'>PREDOGLED</button>
           </form>
         </div>

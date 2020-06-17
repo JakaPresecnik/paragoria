@@ -12,6 +12,8 @@ import News from './components/News';
 import Biography from './components/Biography';
 import Visuals from './components/Visuals';
 
+import AddNews from './components/AddNews';
+
 function App () {
  return ( 
   <div className='container'>
@@ -25,6 +27,8 @@ function App () {
             <Route path='/paragoria/biography' component={Biography} />
             <Route path='/paragoria/visuals' component={Visuals} />
             <Route path='/paragoria/booking' component={Booking} />
+
+            <Route path='/paragoria/addNews' component={AddNews} />
           </Switch>
           <ReactPlayer url='https://soundcloud.com/on-parole/paragoria-from-carcass-to-soil' playing={true} width='70%' height='70px' style={{margin: '2em auto', maxWidth: '500px'}}/>
           <Footer />
