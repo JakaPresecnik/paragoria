@@ -1,75 +1,75 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bf30743fa3bfa0c91405cfc38a44ed22",
+    "revision": "6811371f993a1aa05ebb4ae75bd4184b",
     "url": "/paragoria/index.html"
   },
   {
-    "revision": "0a89dfecc757d08a9850",
-    "url": "/paragoria/static/css/main.3d30cb4f.chunk.css"
+    "revision": "5ddc031cf66d3a9e5522",
+    "url": "/paragoria/static/css/main.689ddb50.chunk.css"
   },
   {
-    "revision": "9a4ba6c6d894674438cb",
-    "url": "/paragoria/static/js/13.93b5847d.chunk.js"
+    "revision": "80ac052c78e6452405bd",
+    "url": "/paragoria/static/js/13.2e7ea01b.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/paragoria/static/js/13.93b5847d.chunk.js.LICENSE.txt"
+    "url": "/paragoria/static/js/13.2e7ea01b.chunk.js.LICENSE.txt"
   },
   {
     "revision": "d856de81f51585edd066",
     "url": "/paragoria/static/js/14.cdf3aa3a.chunk.js"
   },
   {
-    "revision": "0a89dfecc757d08a9850",
-    "url": "/paragoria/static/js/main.5020c790.chunk.js"
+    "revision": "5ddc031cf66d3a9e5522",
+    "url": "/paragoria/static/js/main.2b698f47.chunk.js"
   },
   {
-    "revision": "0a65bd4acdd3425e4e48",
-    "url": "/paragoria/static/js/reactPlayerDailyMotion.268abd95.chunk.js"
+    "revision": "e04bf5a0a3e00c122bea",
+    "url": "/paragoria/static/js/reactPlayerDailyMotion.3242940d.chunk.js"
   },
   {
-    "revision": "d9c070dfe1d687be5cab",
-    "url": "/paragoria/static/js/reactPlayerFacebook.d785926f.chunk.js"
+    "revision": "5f9dc51f1084e844fcca",
+    "url": "/paragoria/static/js/reactPlayerFacebook.675cda17.chunk.js"
   },
   {
-    "revision": "49a296d18a792089d014",
-    "url": "/paragoria/static/js/reactPlayerFilePlayer.85386a0a.chunk.js"
+    "revision": "46967428ed4be7eb5d70",
+    "url": "/paragoria/static/js/reactPlayerFilePlayer.95ab52b3.chunk.js"
   },
   {
-    "revision": "f749daa2eb7bf6cccaa8",
-    "url": "/paragoria/static/js/reactPlayerMixcloud.aebd2ab3.chunk.js"
+    "revision": "ee4b80152e8ad28e9c36",
+    "url": "/paragoria/static/js/reactPlayerMixcloud.8878c361.chunk.js"
   },
   {
-    "revision": "bb271e1646d368156085",
-    "url": "/paragoria/static/js/reactPlayerSoundCloud.ae795192.chunk.js"
+    "revision": "7b0b8f0191c7f419dded",
+    "url": "/paragoria/static/js/reactPlayerSoundCloud.546868c1.chunk.js"
   },
   {
-    "revision": "68940153e66cf86fc15b",
-    "url": "/paragoria/static/js/reactPlayerStreamable.f38aee3e.chunk.js"
+    "revision": "20a3e11e4b229de61a3a",
+    "url": "/paragoria/static/js/reactPlayerStreamable.959c219c.chunk.js"
   },
   {
-    "revision": "d401493f782c72817117",
-    "url": "/paragoria/static/js/reactPlayerTwitch.18d418af.chunk.js"
+    "revision": "a1ab9ab53f6111ad9924",
+    "url": "/paragoria/static/js/reactPlayerTwitch.b1db2573.chunk.js"
   },
   {
-    "revision": "c0fb401756043a4bccb5",
-    "url": "/paragoria/static/js/reactPlayerVidyard.d454ae66.chunk.js"
+    "revision": "b07bc638f890998dd66a",
+    "url": "/paragoria/static/js/reactPlayerVidyard.0ca352ad.chunk.js"
   },
   {
-    "revision": "818b1087c1a511eba162",
-    "url": "/paragoria/static/js/reactPlayerVimeo.1fe638a1.chunk.js"
+    "revision": "aed98346232250bf8bde",
+    "url": "/paragoria/static/js/reactPlayerVimeo.e5ceb0a6.chunk.js"
   },
   {
-    "revision": "e73911d8f8571210725b",
-    "url": "/paragoria/static/js/reactPlayerWistia.90753cc7.chunk.js"
+    "revision": "8182b7524b061c22788f",
+    "url": "/paragoria/static/js/reactPlayerWistia.3389d0f7.chunk.js"
   },
   {
-    "revision": "a3d39fa9cace319e36c9",
-    "url": "/paragoria/static/js/reactPlayerYouTube.1fedf514.chunk.js"
+    "revision": "d588480e278e774c23ba",
+    "url": "/paragoria/static/js/reactPlayerYouTube.90623e55.chunk.js"
   },
   {
-    "revision": "bf928e57d4449e7a78fc",
-    "url": "/paragoria/static/js/runtime-main.8fdbc6f7.js"
+    "revision": "824f504e75f5b757a911",
+    "url": "/paragoria/static/js/runtime-main.838cb201.js"
   },
   {
     "revision": "f961df69f63575a5cb1768dea4890190",
