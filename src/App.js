@@ -33,7 +33,9 @@ class App extends React.Component {
            <BrowserRouter>
              <Nav shadeNavigation={this.state.shadeNavigation}/>
              <Switch>
-               <Route path='/paragoria' exact component={Header} />
+               <Route path='/paragoria' exact render={() => (
+                 <Header shadeNavigation={this.state.shadeNavigation}/>
+               )} />
                <Route path='/paragoria/news' component={News} />
                <Route path='/paragoria/biography' component={Biography} />
                <Route path='/paragoria/visuals' component={Visuals} />

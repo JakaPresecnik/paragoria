@@ -196,9 +196,15 @@ form button:active {
     margin: auto;
 }
 
+.news-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
 .news {
-    max-width: 900px;
-    margin: auto;
+    max-width: 800px;
+    min-width: 250px;
+    margin: 0 auto;
     padding: 2em;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
@@ -211,8 +217,10 @@ form button:active {
     color: #555;
 }
 .news-image {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -226,4 +234,10 @@ form button:active {
     .news-image {
       height: 150px;
     }
+}
+
+@media only screen and (min-width: 1118px) {
+  .news {
+    width: 40%;
+  }
 }

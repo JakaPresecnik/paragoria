@@ -89,11 +89,48 @@ header {
   text-align: center;
 }
 
+.albumCover {
+  border-radius: 12px;
+  margin-top: -80px;
+}
+.albumCover:hover {
+  box-shadow: 0px 0px 5px #632828;
+}
+
 @media screen and (max-width: 482px) {
   header {
     margin-top: 6em;
   }
 }
+.hiddenBox {
+  visibility: hidden;
+  display: flex;
+  position: relative;
+  height: 80px;
+  width: 10px;
+  justify-content: space-between;
+  background-color: rgb(15, 15, 15, 0);
+  font-size: 0;
+  transition: 0.3s;
+}
+
+.buyAlbum {
+  box-shadow: inset 0px 0px 20px #632828;
+  display: flex;
+  position: relative;
+  height: 80px;
+  margin: auto;
+  justify-content: space-between;
+  padding: 0 2em;
+  border-radius: 3px;
+  background-color: rgb(15, 15, 15, 0.9);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #afafaf;
+  transition: 0.3s;
+}
+
 header img {
   max-width: 650px;
   margin: -0.5em auto 0.3em auto;
@@ -189,29 +226,29 @@ footer p {
   color: #afafaf;
 }
 
-footer ul {
+footer ul, header ul{
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-footer li {
+footer li, header li {
   display: inline-block;
 }
 
-footer a {
+footer a, header li a {
   display: inline-block;
   color: #222;
   height: 1.5em;
-  padding: 0.6em;
+  padding: 0.4em;
   width: 1.5em;
-  margin: 1em;
+  margin: 0.7em;
   border-radius: 50%;
   background-color: rgba(200, 200, 200, 0.6);
   transition: 0.25s;
 }
 
-footer a:hover {
+footer a:hover, header li a:hover {
   cursor: pointer;
   background-color: #555;
   color: #afafaf;
