@@ -4,6 +4,12 @@ section {
     color: #afafaf;
 }
 
+@media screen and (max-width: 482px) {
+  section {
+    margin-top: 6em;
+  }
+}
+
 .section-header {
     padding: 3em;
     margin: 1.5em 0;
