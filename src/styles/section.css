@@ -3,6 +3,11 @@ section {
     color: #afafaf;
     margin-top: 3em;
 }
+@media screen and (max-width: 482px) {
+  section {
+    margin-top: 6em;
+  }
+}
 
 .section-header {
     padding: 3em;

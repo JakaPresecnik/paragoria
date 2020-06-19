@@ -88,6 +88,12 @@ header {
   padding: 0.3em;
   text-align: center;
 }
+
+@media screen and (max-width: 482px) {
+  header {
+    margin-top: 6em;
+  }
+}
 header img {
   max-width: 650px;
   margin: -0.5em auto 0.3em auto;
@@ -129,9 +135,7 @@ nav a {
 }
 
 nav a:hover {
-  position: relative;
   background-color: #555;
-  top: 5px;
   color: #afafaf;
 }
 
@@ -163,7 +167,8 @@ nav li:active, nav a:active {
 
 .scrolled a:hover {
   top: 0;
-  background-color: #3b3b3b;
+  background-color: rgb(25, 25, 25);
+  box-shadow: 2px -4px 6px #632828, -2px -4px 6px #632828;
 }
 
 .scrolled .selected {
@@ -172,15 +177,22 @@ nav li:active, nav a:active {
 /* FOOTER */
 
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
   width: 100%;
   margin: auto;
 }
 
+footer p {
+  align-self: flex-end;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #afafaf;
+}
+
 footer ul {
   list-style: none;
-  margin-bottom: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
 
 footer li {
@@ -202,6 +214,30 @@ footer a {
 footer a:hover {
   cursor: pointer;
   background-color: #555;
-  border-radius: 0;
   color: #afafaf;
+}
+
+.scrolled-link {
+  color: #afafaf;
+  background-color: rgba(25, 25, 25, 0.8);
+}
+
+.scrolled-link:hover {
+  cursor: pointer;
+  background-color: rgb(25, 25, 25);
+  box-shadow: 3px 4px 6px #632828, -3px -4px 6px #632828;
+}
+
+@media screen and (max-width: 400px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer ul {
+    order: 1;
+  }
+  footer p {
+    order: 2;
+    align-self: center;
+  }
 }
