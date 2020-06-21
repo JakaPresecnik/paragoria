@@ -11,7 +11,7 @@ app.use(cors());
 
 
 // Connecting to front-end
-app.use(express.static(path.join(__dirname, '/build')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
@@ -41,7 +41,7 @@ app.get('/allNews', (req, res) => {
 });
 
 app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/build/index.html'));
+    res.sendFile(path.join(__dirname+'client/build/index.html'));
 });
 
 app.post('/addNews', (req, res) => {
