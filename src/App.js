@@ -11,19 +11,20 @@ import Booking from './components/Booking';
 import News from './components/News';
 import Biography from './components/Biography';
 import Visuals from './components/Visuals';
+import ScrollToTop from './components/ScrollToTop'
 
 class App extends React.Component {
   state = {
       shadeNavigation: false,
   }
   componentDidMount() {
-      window.addEventListener('scroll', () => {
-          if(window.scrollY > 30) {
-              this.setState({shadeNavigation: true})
-          }else {
-              this.setState({shadeNavigation: false})
-          }
-      })
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 30) {
+            this.setState({shadeNavigation: true})
+        }else {
+            this.setState({shadeNavigation: false})
+        }
+    })
   }
   render() {
     return (
@@ -32,6 +33,7 @@ class App extends React.Component {
          <div className='homepage-container'>
            <BrowserRouter>
              <Nav shadeNavigation={this.state.shadeNavigation}/>
+             <ScrollToTop />
              <Switch>
                <Route path='/paragoria' exact render={() => (
                  <Header shadeNavigation={this.state.shadeNavigation}/>

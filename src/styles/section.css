@@ -103,13 +103,14 @@ form button:active {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .lineup-disc {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    height: fit-content;
     justify-content: center;
 }
 
@@ -196,19 +197,14 @@ form button:active {
     margin: auto;
 }
 
-.news-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
 .news {
-    max-width: 800px;
+    flex-grow: initial;
+    max-width: 700px;
     min-width: 250px;
     margin: 0 auto;
-    padding: 2em;
+    padding: 1em;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
-
 }
 .news .date {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -217,10 +213,8 @@ form button:active {
     color: #555;
 }
 .news-image {
-  margin-top: 0.7em;
-  margin-bottom: 0.7em;
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -237,7 +231,15 @@ form button:active {
 }
 
 @media only screen and (min-width: 1118px) {
-  .news {
-    width: 40%;
-  }
+    .bio {
+        margin-right: 0;
+    }
+    .lineup, .discography {
+        margin-left: 0;
+        margin-right: 2em;
+        width: 100%;
+    }
+    .discography img {
+        max-width: 250px;
+    }
 }
