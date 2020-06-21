@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/paragoria/static/css/main.689ddb50.chunk.css",
-    "main.js": "/paragoria/static/js/main.2b698f47.chunk.js",
-    "main.js.map": "/paragoria/static/js/main.2b698f47.chunk.js.map",
+    "main.css": "/paragoria/static/css/main.3ffe35d5.chunk.css",
+    "main.js": "/paragoria/static/js/main.ebe65662.chunk.js",
+    "main.js.map": "/paragoria/static/js/main.ebe65662.chunk.js.map",
     "reactPlayerDailyMotion.js": "/paragoria/static/js/reactPlayerDailyMotion.3242940d.chunk.js",
     "reactPlayerDailyMotion.js.map": "/paragoria/static/js/reactPlayerDailyMotion.3242940d.chunk.js.map",
     "reactPlayerFacebook.js": "/paragoria/static/js/reactPlayerFacebook.675cda17.chunk.js",
@@ -27,15 +27,15 @@
     "reactPlayerYouTube.js.map": "/paragoria/static/js/reactPlayerYouTube.90623e55.chunk.js.map",
     "runtime-main.js": "/paragoria/static/js/runtime-main.838cb201.js",
     "runtime-main.js.map": "/paragoria/static/js/runtime-main.838cb201.js.map",
-    "static/js/13.2e7ea01b.chunk.js": "/paragoria/static/js/13.2e7ea01b.chunk.js",
-    "static/js/13.2e7ea01b.chunk.js.map": "/paragoria/static/js/13.2e7ea01b.chunk.js.map",
+    "static/js/13.e687e491.chunk.js": "/paragoria/static/js/13.e687e491.chunk.js",
+    "static/js/13.e687e491.chunk.js.map": "/paragoria/static/js/13.e687e491.chunk.js.map",
     "static/js/14.cdf3aa3a.chunk.js": "/paragoria/static/js/14.cdf3aa3a.chunk.js",
     "static/js/14.cdf3aa3a.chunk.js.map": "/paragoria/static/js/14.cdf3aa3a.chunk.js.map",
     "index.html": "/paragoria/index.html",
-    "precache-manifest.3b7675bec13438548e3acc18fb2e2788.js": "/paragoria/precache-manifest.3b7675bec13438548e3acc18fb2e2788.js",
+    "precache-manifest.bf05c1ce1c2653c3d92bc9ff7143d37f.js": "/paragoria/precache-manifest.bf05c1ce1c2653c3d92bc9ff7143d37f.js",
     "service-worker.js": "/paragoria/service-worker.js",
-    "static/css/main.689ddb50.chunk.css.map": "/paragoria/static/css/main.689ddb50.chunk.css.map",
-    "static/js/13.2e7ea01b.chunk.js.LICENSE.txt": "/paragoria/static/js/13.2e7ea01b.chunk.js.LICENSE.txt",
+    "static/css/main.3ffe35d5.chunk.css.map": "/paragoria/static/css/main.3ffe35d5.chunk.css.map",
+    "static/js/13.e687e491.chunk.js.LICENSE.txt": "/paragoria/static/js/13.e687e491.chunk.js.LICENSE.txt",
     "static/media/container.css": "/paragoria/static/media/pg-brain.00170a9b.png",
     "static/media/decomposition_of_mind.jpg": "/paragoria/static/media/decomposition_of_mind.8964bfe9.jpg",
     "static/media/from_the_ashes.jpg": "/paragoria/static/media/from_the_ashes.2c14f71b.jpg",
@@ -55,8 +55,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.838cb201.js",
-    "static/js/13.2e7ea01b.chunk.js",
-    "static/css/main.689ddb50.chunk.css",
-    "static/js/main.2b698f47.chunk.js"
+    "static/js/13.e687e491.chunk.js",
+    "static/css/main.3ffe35d5.chunk.css",
+    "static/js/main.ebe65662.chunk.js"
   ]
 }
