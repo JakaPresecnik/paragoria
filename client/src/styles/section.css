@@ -104,13 +104,14 @@ form button:active {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .lineup-disc {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    height: fit-content;
     justify-content: center;
 }
 
@@ -198,9 +199,9 @@ form button:active {
 }
 
 .news {
-    max-width: 900px;
+    max-width: 700px;
     margin: auto;
-    padding: 2em;
+    padding: 1em;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
 
@@ -228,3 +229,17 @@ form button:active {
       height: 150px;
     }
 }
+
+@media only screen and (min-width: 1118px) {
+      .bio {
+          margin-right: 0;
+      }
+      .lineup, .discography {
+          margin-left: 0;
+          margin-right: 2em;
+          width: 100%;
+      }
+      .discography img {
+          max-width: 250px;
+      }
+  }

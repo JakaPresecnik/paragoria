@@ -11,6 +11,7 @@ import Booking from './components/Booking';
 import News from './components/News';
 import Biography from './components/Biography';
 import Visuals from './components/Visuals';
+import ScrollToTop from './components/ScrollToTop'
 
 import AddNews from './components/AddNews';
 
@@ -36,6 +37,7 @@ class App extends React.Component {
          <div className='homepage-container'>
            <BrowserRouter>
              <Nav shadeNavigation={this.state.shadeNavigation} />
+             <ScrollToTop />
              <Switch>
                <Route path='/paragoria' exact render={() => (
                  <Header shadeNavigation={this.state.shadeNavigation}/>
