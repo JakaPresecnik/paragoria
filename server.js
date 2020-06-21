@@ -39,6 +39,10 @@ app.get('/allNews', (req, res) => {
   res.send(newsData);
 });
 
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
 app.post('/addNews', (req, res) => {
   req.body.key= newsKey;
   newsKey++;
