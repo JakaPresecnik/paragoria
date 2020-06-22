@@ -40,7 +40,7 @@ app.get('/allNews', (req, res) => {
   res.send(newsData);
 });
 
-app.use('/*', (req, res) =>{
+app.get('/*', (req, res) =>{
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
