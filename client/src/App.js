@@ -35,7 +35,6 @@ class App extends React.Component {
      <div className='container'>
        <div className='inner-container'>
          <div className='homepage-container'>
-           <BrowserRouter>
              <Nav shadeNavigation={this.state.shadeNavigation} />
              <ScrollToTop />
              <Switch>
@@ -51,7 +50,6 @@ class App extends React.Component {
              </Switch>
              <ReactPlayer url='https://soundcloud.com/on-parole/paragoria-from-carcass-to-soil' playing={false} width='70%' height='70px' style={{margin: '2em auto', maxWidth: '500px'}}/>
              <Footer shadeNavigation={this.state.shadeNavigation} />
-           </BrowserRouter>
 
          </div>
        </div>
