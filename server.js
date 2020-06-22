@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -10,7 +11,7 @@ app.use(cors());
 
 
 // Connecting to front-end
-app.use(express.static('./client'))
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
@@ -37,6 +38,10 @@ const newsData = [
 // create a GET route
 app.get('/allNews', (req, res) => {
   res.send(newsData);
+});
+
+app.get('/*', (req, res) =>{
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 app.post('/addNews', (req, res) => {
