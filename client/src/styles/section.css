@@ -111,12 +111,15 @@ form button:active {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     height: fit-content;
     justify-content: center;
 }
 
 .lineup, .discography {
-    width: 280px;
+    width: 100%;
+    max-width: 300px;
+    min-width: 280px;
     margin: 1em;
     padding: 0 1em 0.5em 1em;
     border: 1px solid #632828;
@@ -145,7 +148,7 @@ form button:active {
 }
 
 .bio figure {
-    margin: 2em 0.7em;
+    margin: 2em;
 }
 
 .bio img {
@@ -234,10 +237,14 @@ form button:active {
       .bio {
           margin-right: 0;
       }
+      .bio-disc-lu {
+          display: flex;
+          align-content: space-around;
+
+      }
       .lineup, .discography {
           margin-left: 0;
           margin-right: 2em;
-          width: 100%;
       }
       .discography img {
           max-width: 250px;
