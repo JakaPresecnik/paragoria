@@ -3,7 +3,7 @@ import paraa from '../img/album/para1.jpg';
 import parab from '../img/album/para2.jpg';
 import parac from '../img/album/para3.jpg';
 import parad from '../img/album/para4.jpg';
-import parae from '..\img\album\para5.JPG';
+import parae from '../img/album/para5.jpg';
 import live from '../img/album/live.jpg';
 import livea from '../img/album/live1.jpg';
 import liveb from '../img/album/live2.jpg';
