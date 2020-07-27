@@ -233,6 +233,16 @@ form button:active {
     }
 }
 
+.booking a {
+    text-decoration: none;
+    color: #632828;
+}
+
+.booking a:hover {
+    color: #a52121;
+    text-shadow: 1px 1px #632828;
+}
+
 @media only screen and (min-width: 1118px) {
       .bio {
           margin-right: 0;
