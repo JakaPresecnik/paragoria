@@ -1,17 +1,18 @@
-import para from '../img/album/para.jpg'
-import paraa from '../img/album/para1.jpg'
-import parab from '../img/album/para2.jpg'
-import parac from '../img/album/para3.jpg'
-import parad from '../img/album/para4.jpg'
-import parae from '../img/album/para5.JPG'
-import live from '../img/album/live.jpg'
-import livea from '../img/album/live1.jpg'
-import liveb from '../img/album/live2.jpg'
-import livec from '../img/album/live3.jpg'
-import lived from '../img/album/live4.jpg'
-import livef from '../img/album/live6.jpg'
-import liveg from '../img/album/live7.jpg'
-import liveh from '../img/album/live8.jpg'
+
+import para from '../img/album/para.jpg';
+import paraa from '../img/album/para1.jpg';
+import parab from '../img/album/para2.jpg';
+import parac from '../img/album/para3.jpg';
+import parad from '../img/album/para4.jpg';
+import parae from '../img/album/para5.JPG';
+import live from '../img/album/live.jpg';
+import livea from '../img/album/live1.jpg';
+import liveb from '../img/album/live2.jpg';
+import livec from '../img/album/live3.jpg';
+import lived from '../img/album/live4.jpg';
+import livef from '../img/album/live6.jpg';
+import liveg from '../img/album/live7.jpg';
+import liveh from '../img/album/live8.jpg';
 
 const images = [
     {
