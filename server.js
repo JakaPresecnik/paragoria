@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const db = require('./db');
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
@@ -13,7 +15,7 @@ app.use(cors());
 // Connecting to front-end
 app.use(express.static(path.join(__dirname, 'client/build')))
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
 let newsKey = 3;
@@ -34,6 +36,27 @@ const newsData = [
     description: '6 years after Decomposition of mind we are back in studio recording our 2nd album. Album will be out in the middle of 2020.',
   },
 ];
+
+// nove poti za pgdb
+
+app.get('/api/v1/news', async (req,res) => {
+  try {
+    const results = await db.query('SELECT * FROM news');
+
+  console.log(results);
+  
+  res.send('succes');
+  }catch (err) {
+    console.log(err);
+  }
+  
+
+});
+
+app.post('/api/v1/news', (req,res) => {
+  console.log(req.body);
+})
+
 
 // create a GET route
 app.get('/allNews', (req, res) => {
