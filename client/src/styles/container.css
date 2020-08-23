@@ -2,7 +2,7 @@
 
 body {
   height: 100vh;
-    
+
 }
 .inner-container {
   background: url(../img/pg-brain.png) no-repeat 50% 20%;
@@ -84,10 +84,41 @@ body {
 
 header {
   max-width: 800px;
-  margin: auto;
+  margin: 3em auto 2em auto;
   padding: 0.3em;
   text-align: center;
 }
+
+@media screen and (max-width: 482px) {
+  header {
+    margin-top: 6em;
+  }
+}
+.album-cover {
+  margin-top: 30px;
+}
+.hiddenBox {
+  visibility: hidden;
+  display: flex;
+  position: relative;
+  margin-bottom: -80px;
+  margin-left: 30px;
+  height: 50px;
+  justify-content: space-between;
+  font-size: 0;
+  transition: 0.3s;
+}
+
+.buyAlbum {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  height: 50px;
+  margin-bottom: -80px;
+  padding: 0 2em;
+  transition: 0.3s;
+}
+
 header img {
   max-width: 650px;
   margin: -0.5em auto 0.3em auto;
@@ -97,18 +128,23 @@ header img {
 /* NAV */
 
 nav ul {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
   margin-top: 0;
   display: flex;
   flex-wrap: wrap;
   background-color: rgba(200, 200, 200, 0.6);
   justify-content: center;
   padding: 0;
+  transition: 0.25s;
 }
 
 nav li {
   display: inline;
   padding: 0.8em 0;
-  margin: 0 0.5em;   
+  margin: 0 0.5em;
+  transition: 0.25s;
 }
 
 nav a {
@@ -124,18 +160,16 @@ nav a {
 }
 
 nav a:hover {
-  position: relative;
-  background-color: #555; 
-  top: 5px;
+  background-color: #555;
   color: #afafaf;
 }
 
 nav li:hover {
-  background-color: #555;  
+  background-color: #555;
 }
 
 nav li:active, nav a:active {
-  background-color: #3b3b3b;  
+  background-color: #3b3b3b;
 }
 
 .selected {
@@ -143,40 +177,92 @@ nav li:active, nav a:active {
   background-color: #3b3b3b;
   border-radius: 0;
 }
+.scrolled {
+  background-color: rgba(25, 25, 25, 0.8);
+}
 
+.scrolled li {
+  padding: 0;
+}
+.scrolled a {
+  color: #afafaf;
+  padding: 0 0.8em;
+  border-radius: 0;
+}
+
+.scrolled a:hover {
+  top: 0;
+  background-color: rgb(25, 25, 25);
+  box-shadow: 2px -4px 6px #632828, -2px -4px 6px #632828;
+}
+
+.scrolled .selected {
+  background-color: #632828;
+}
 /* FOOTER */
 
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  margin: auto; 
+  margin: auto;
 }
 
-footer ul {
+footer p {
+  align-self: flex-end;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #afafaf;
+}
+
+footer ul, header ul {
   list-style: none;
-  margin-bottom: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
 
-footer li {
+footer li, header li {
   display: inline-block;
 }
 
-footer a {
+footer a, header li a {
   display: inline-block;
   color: #222;
   height: 1.5em;
-  padding: 0.6em;
+  padding: 0.7em;
   width: 1.5em;
-  margin: 1em;
+  margin: 0.7em;
   border-radius: 50%;
   background-color: rgba(200, 200, 200, 0.6);
   transition: 0.25s;
 }
 
-footer a:hover {
+footer a:hover, header li a:hover {
   cursor: pointer;
-  background-color: #555; 
-  border-radius: 0;
+  background-color: #555;
   color: #afafaf;
+}
+
+.scrolled-link {
+  color: #afafaf;
+  background-color: rgba(25, 25, 25, 0.8);
+}
+
+.scrolled-link:hover {
+  cursor: pointer;
+  background-color: rgb(25, 25, 25);
+  box-shadow: 3px 4px 6px #632828, -3px -4px 6px #632828;
+}
+
+@media screen and (max-width: 400px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer ul {
+    order: 1;
+  }
+  footer p {
+    order: 2;
+    align-self: center;
+  }
 }

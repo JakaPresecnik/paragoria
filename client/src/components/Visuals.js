@@ -5,6 +5,14 @@ import ReactPlayer from 'react-player';
 
 import images from '../utils/helper';
 
+const customStyles = {
+    view: base => ({
+        ...base,
+        height: '100vh',
+        paddingTop: '55px'
+    }),
+  }
+
 function Visuals () {
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
@@ -25,7 +33,7 @@ function Visuals () {
       }, []);
 
     return (
-        <section>
+        <section className='visuals'>
             <div className='section-header'>
                 <h2>VISUALS</h2>
             </div>
@@ -42,11 +50,11 @@ function Visuals () {
                 {viewerIsOpen ? (
                 <Modal onClose={closeLightbox}>
                     <Carousel
+                    styles={customStyles}
                     currentIndex={currentImage}
                     views={images.map(x => ({
                         ...x,
                         srcset: x.srcSet,
-                        caption: x.title
                     }))}
                     />
                 </Modal>

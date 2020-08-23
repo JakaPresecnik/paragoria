@@ -12,7 +12,7 @@ class News extends Component {
         const res = await fetch('/allNews');
         try {
             const data = await res.json();
-            return data;
+            return data.reverse();
         } catch(error) {
             console.log('Error: ', error);
         } 
@@ -59,7 +59,7 @@ class News extends Component {
                             return (
                                 <div  key={news.key} className='news'>
                                     <p className='date'>{news.date}</p>
-                                    <h3>{news.header}</h3>
+                                    <h3>{news.linkUrl}</h3>
                                     <p>{news.description}</p>
                                 </div>
                             )

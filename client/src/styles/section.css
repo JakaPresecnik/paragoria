@@ -1,6 +1,13 @@
 section {
     text-align: center;
+    margin-top: 3em;
     color: #afafaf;
+}
+
+@media screen and (max-width: 482px) {
+  section {
+    margin-top: 6em;
+  }
 }
 
 .section-header {
@@ -16,7 +23,7 @@ section h2 {
     margin: 0.1em;
 }
 
-.sub-text {
+.section-header p {
     font-size: 1.1em;
     color: #555;
 }
@@ -97,18 +104,22 @@ form button:active {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .lineup-disc {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    height: fit-content;
     justify-content: center;
 }
 
 .lineup, .discography {
-    width: 280px;
+    width: 100%;
+    max-width: 300px;
+    min-width: 280px;
     margin: 1em;
     padding: 0 1em 0.5em 1em;
     border: 1px solid #632828;
@@ -137,7 +148,7 @@ form button:active {
 }
 
 .bio figure {
-    margin: 2em 0.7em;
+    margin: 2em;
 }
 
 .bio img {
@@ -191,9 +202,9 @@ form button:active {
 }
 
 .news {
-    max-width: 900px;
+    max-width: 700px;
     margin: auto;
-    padding: 2em;
+    padding: 1em;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
 
@@ -221,3 +232,31 @@ form button:active {
       height: 150px;
     }
 }
+
+.booking a {
+    text-decoration: none;
+    color: #632828;
+}
+
+.booking a:hover {
+    color: #a52121;
+    text-shadow: 1px 1px #632828;
+}
+
+@media only screen and (min-width: 1118px) {
+      .bio {
+          margin-right: 0;
+      }
+      .bio-disc-lu {
+          display: flex;
+          align-content: space-around;
+
+      }
+      .lineup, .discography {
+          margin-left: 0;
+          margin-right: 2em;
+      }
+      .discography img {
+          max-width: 250px;
+      }
+  }

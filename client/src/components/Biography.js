@@ -1,7 +1,8 @@
 import React from 'react';
 
 import logo from '../img/logo.png';
-import band from '../img/pic99.jpg';
+import paragoriaLogo from '../img/paragoria-logo.png';
+import band from '../img/paragoria.jpg';
 import decomposition from '../img/decomposition_of_mind.jpg';
 import ashes from '../img/from_the_ashes.jpg';
 
@@ -19,16 +20,20 @@ function Biography () {
                         right after releasing their first demo cd From the Ashes. In 2011 the band 
                         renamed and changed their drummer and genre of music, applying some new 
                         progressive metal elements.</p>
-                    <figure>
-                        <img src={band} alt='Paragoria the band'/>
-                        <figcaption>From left to the right: Primož Brezovnik, Jernej Štorgelj, Matjaž Parfant, Matija Kadliček</figcaption>
+                    <figure className='opac'>
+                        <img src={paragoriaLogo} alt='Paragoria logo'/>
                     </figure>
                     
                     <p>The new Paragoria introduced new songs and line-up in July 2011 at Metalcamp 
                         festival in Tolmin. A month later they performed at Metal Mania Open Air 
                         festival in Komen. In 2012 the band worked on the layout of their own studio, 
                         where they self-recorded their new album. First album from Paragoria is 
-                        entitled Decomposition of mind, it was released on October 4th 2013.</p><hr/>
+                        entitled Decomposition of mind, it was released on October 4th 2013.</p>
+                    <figure>
+                        <img src={band} alt='Paragoria the band'/>
+                        <figcaption>From left to the right: Jernej Štorgelj, Primož Brezovnik, Bojan Beber Vovk, Matjaž Parfant</figcaption>
+                    </figure>
+                   
                     <p>Paragoria went into slightly different musical direction, but kept the 
                         groove they had in their previous formation. It is easy to flow along with 
                         their death metal groove, combined with thrashy or even crossover parts 
@@ -45,7 +50,7 @@ function Biography () {
                         <p className='subpara'>Bass / Vocals</p>
                         <p className='headpara'>Primož Brezovnik</p>
                         <p className='subpara'>Guitars</p>
-                        <p className='headpara'>Matija Kadliček</p>
+                        <p className='headpara'>Bojan Beber Vovk</p>
                         <p className='subpara'>Drums / Percussion</p>
                     </div>
                     <div className='discography'>
