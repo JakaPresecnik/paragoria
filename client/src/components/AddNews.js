@@ -8,12 +8,11 @@ class AddNews extends Component {
     showPreview: false,
     type: null,
     date: null,
-    linkUrl: null,
+    content: null,
     description: null,
   }
 
   postNews = async (url = '', data = {}) => {
-    console.log('data', data)
     const res = await fetch (url, {
       method: 'POST',
       credentials: 'same-origin',
@@ -32,9 +31,9 @@ class AddNews extends Component {
   }
 
   componentDidMount() {
-    const monthArray = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
+    const monthArray = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
     const today = new Date();
-    this.setState({date: `${today.getDate()}. ${monthArray[today.getMonth()]} ${today.getFullYear()}`})
+    this.setState({date: `${today.getDate()}-${monthArray[today.getMonth()]}-${today.getFullYear()}`})
   }
   handleShowPreview(e) {
     e.preventDefault()
@@ -44,7 +43,7 @@ class AddNews extends Component {
     this.setState({type: e.target.value})
   }
   handleLinkUrlChange(e) {
-    this.setState({linkUrl: e.target.value})
+    this.setState({content: e.target.value})
   }
   handleDescriptionChange(e) {
     this.setState({description: e.target.value})
@@ -53,16 +52,16 @@ class AddNews extends Component {
     const data = {
       date: this.state.date,
       type: this.state.type,
-      linkUrl: this.state.linkUrl,
+      content: this.state.content,
       description: this.state.description,
     }
-    this.postNews('/addNews', data)
+    this.postNews('/api/v1/news', data)
   }
 
 
 
   render() {
-    const {showPreview, type, linkUrl, description, date} = this.state;
+    const {showPreview, type, content, description, date} = this.state;
 
     return (
       <section>
@@ -75,7 +74,7 @@ class AddNews extends Component {
           showPreview={showPreview}
           type={type}
           date={date}
-          linkUrl={linkUrl}
+          content={content}
           description={description}
           handleShowPreview={this.handleShowPreview.bind(this)}
         />
@@ -96,7 +95,7 @@ class AddNews extends Component {
             <label htmlFor='link' style={{width: '100%'}}>Opis dogodka, napoved dogodka, datum, lokacija, kje, kdaj, zakaj...:</label>
             <textarea onChange={e => this.handleDescriptionChange(e)} placeholder='Text Description...'/>
 
-            <button disabled={!type || !linkUrl || !description} onClick={e => this.handlePostNews()}>DODAJ</button>
+            <button disabled={!type || !content || !description} onClick={e => this.handlePostNews()}>DODAJ</button>
             <button onClick={e => this.handleShowPreview(e)} className='preview-btn'>PREDOGLED</button>
           </form>
         </div>
