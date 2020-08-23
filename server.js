@@ -1,21 +1,21 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+
+const cors = require('cors');
 const db = require('./db');
-require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-const cors = require('cors');
 app.use(cors());
-
 
 // Connecting to front-end
 app.use(express.static(path.join(__dirname, 'client/build')))
 
 const port = process.env.PORT || 5001;
+
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // nove poti za pgdb
