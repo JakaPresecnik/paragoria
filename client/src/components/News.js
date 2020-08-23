@@ -9,10 +9,10 @@ class News extends Component {
     }
 
     retrieveNews = async () => {
-        const res = await fetch('/allNews');
+        const res = await fetch('/api/v1/news');
         try {
             const data = await res.json();
-            return data.reverse();
+            return data.newsData.reverse();
         } catch(error) {
             console.log('Error: ', error);
         } 
@@ -41,7 +41,7 @@ class News extends Component {
                                     <p className='date'>{news.date}</p>
                                     <p>{news.description}</p>
                                     <div className='news-video'>
-                                    <ReactPlayer className='news-video-box' url={news.linkUrl} />
+                                    <ReactPlayer className='news-video-box' url={news.content} />
                                     </div>
                                 </div>
                             )
@@ -49,8 +49,8 @@ class News extends Component {
                             return (
                                 <div  key={news.key} className='news'>
                                     <p className='date'>{news.date}</p>
-                                    <a href={news.linkUrl}>
-                                    <img className='news-image' src={news.linkUrl} alt='News banner' />
+                                    <a href={news.content}>
+                                    <img className='news-image' src={news.content} alt='News banner' />
                                     </a>
                                     <p>{news.description}</p>
                                 </div>
@@ -59,7 +59,7 @@ class News extends Component {
                             return (
                                 <div  key={news.key} className='news'>
                                     <p className='date'>{news.date}</p>
-                                    <h3>{news.linkUrl}</h3>
+                                    <h3>{news.content}</h3>
                                     <p>{news.description}</p>
                                 </div>
                             )

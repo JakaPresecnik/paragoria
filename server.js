@@ -18,34 +18,17 @@ app.use(express.static(path.join(__dirname, 'client/build')))
 const port = process.env.PORT || 5001;
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
-let newsKey = 3;
-
-const newsData = [
-  {
-    type: 'flyer',
-    key: '2',
-    date: '22. FEBRUARY 2019',
-    linkUrl: 'https://i.ibb.co/fXb1Cpv/flyer.jpg',
-    description: 'Camel Metal Show !! Gonoba - 15. obletnica in zadnji koncert - spet! Skupaj z gosti Paragoria in Licence to Hate !!',
-  },
-  {
-    type: 'video',
-    key: '1',
-    date: '25. DECEMBER 2019',
-    linkUrl: 'https://www.youtube.com/watch?v=PsLf10FESl4',
-    description: '6 years after Decomposition of mind we are back in studio recording our 2nd album. Album will be out in the middle of 2020.',
-  },
-];
-
 // nove poti za pgdb
-
+//------------------------------------------------------------------------------------------------------------------------
 app.get('/api/v1/news', async (req,res) => {
   try {
     const results = await db.query('SELECT * FROM news');
+    res.send({
+      status: 'sucess',
+      newsData: results.rows,
+      results: results.rows.length
+    })
 
-  console.log(results);
-  
-  res.send('succes');
   }catch (err) {
     console.log(err);
   }
@@ -53,22 +36,21 @@ app.get('/api/v1/news', async (req,res) => {
 
 });
 
-app.post('/api/v1/news', (req,res) => {
-  console.log(req.body);
+app.post('/api/v1/news', async (req,res) => {
+  try {
+    const results = await db.query(`INSERT INTO news(date, type, content, description) values ($1, $2, $3, $4) RETURNING *`, [req.body.date, req.body.type, req.body.content, req.body.description]);
+
+    res.send(results);
+
+  }catch(err) {
+    console.log(err);
+  }
 })
 
+//---------------------------------------------------------------------------------------------------------------------
 
 // create a GET route
-app.get('/allNews', (req, res) => {
-  res.send(newsData);
-});
 
 app.get('/*', (req, res) =>{
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
-
-app.post('/addNews', (req, res) => {
-  req.body.key= newsKey;
-  newsKey++;
-  newsData.push(req.body);
 });
