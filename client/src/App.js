@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Booking from './components/Booking';
 import News from './components/News';
 import Biography from './components/Biography';
+import Merch from './components/Merch';
 import Visuals from './components/Visuals';
 import ScrollToTop from './components/ScrollToTop'
 
@@ -44,6 +45,7 @@ class App extends React.Component {
                <Route path='/news' component={News} />
                <Route path='/biography' component={Biography} />
                <Route path='/visuals' component={Visuals} />
+               <Route path='/merch' component={Merch} />
                <Route path='/booking' component={Booking} />
 
                <Route path='/addNews' component={AddNews} />

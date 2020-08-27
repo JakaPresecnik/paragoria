@@ -35,6 +35,18 @@ app.get('/api/v1/news', async (req,res) => {
   
 
 });
+app.get('/api/v1/merch', async (req, res) => {
+  try {
+    const result = await db.query('SELECT * FROM merch');
+    res.send({
+      status: 'success',
+      merchData: result.rows,
+      results: result.length
+    })
+  } catch (err) {
+    console.log(err);
+  }
+})
 
 app.post('/api/v1/news', async (req,res) => {
   try {
