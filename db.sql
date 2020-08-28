@@ -2,15 +2,16 @@ CREATE TABLE news(
     key SERIAL NOT NULL PRIMARY KEY,
     date VARCHAR(20),
     type VARCHAR(6) NOT NULL,
-    content VARCHAR(150) NOT NULL,
-    description TEXT NOT NULL
+    header VARCHAR(50),
+    content VARCHAR(150),
+    description TEXT
 );
 
-INSERT INTO news (date, type, content, description)
-    VALUES('22-feb-2019', 'flyer', 'https://i.ibb.co/fXb1Cpv/flyer.jpg', 'Camel Metal Show !! Gonoba - 15. obletnica in zadnji koncert - spet! Skupaj z gosti Paragoria in Licence to Hate !!');
+INSERT INTO news (date, type, header, content, description)
+    VALUES('22 FEBRUARY 2019', 'flyer', 'Camel Metal Show - 30.3.2019', 'https://i.ibb.co/fXb1Cpv/flyer.jpg', 'Camel Metal Show !! Gonoba - 15. obletnica in zadnji koncert - spet! Skupaj z gosti Paragoria in Licence to Hate !!');
 
-INSERT INTO news (date, type, content, description)
-    VALUES('25-dec-2019', 'video', 'https://www.youtube.com/watch?v=PsLf10FESl4', '6 years after Decomposition of mind we are back in studio recording our 2nd album. Album will be out in the middle of 2020.');
+INSERT INTO news (date, type, header, content, description)
+    VALUES('25 DECEMBER 2019', 'video', 'Paragoria - From the Studio', 'https://www.youtube.com/watch?v=PsLf10FESl4', '6 years after Decomposition of mind we are back in studio recording our 2nd album. Album will be out in the middle of 2020.');
 
 CREATE TABLE merch(
     key SERIAL NOT NULL PRIMARY KEY,

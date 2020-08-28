@@ -10,10 +10,11 @@ function Preview (props) {
                     <button onClick={e => props.handleShowPreview(e)} className='close'>X</button>
                     <div className='news'>
                         <p className='date'>{props.date}</p>
-                        <p>{props.description} </p>
+                        <h3>{props.header}</h3>
                         <div className='news-video'>
-                            <ReactPlayer className='news-video-box' url={props.linkUrl} />
+                            <ReactPlayer className='news-video-box' url={props.content} />
                         </div>
+                        <p>{props.description} </p>
                     </div>
                     <button onClick={e => props.handleShowPreview(e)} className='preview-btn'>ZAPRI</button>
                 </div>
@@ -24,8 +25,9 @@ function Preview (props) {
                     <button onClick={e => props.handleShowPreview(e)} className='close'>X</button>
                     <div className='news'>
                         <p className='date'>{props.date}</p>
-                        <a href={props.linkUrl}>
-                        <img className='news-image' src={props.linkUrl} alt='News banner' />
+                        <h3>{props.header}</h3>
+                        <a href={props.content}>
+                            <img className='news-image' src={props.content} alt='News banner' />
                         </a>
                         <p>{props.description}</p>
                     </div> 
@@ -37,7 +39,7 @@ function Preview (props) {
                 <div className='preview'>
                     <button onClick={e => props.handleShowPreview(e)} className='close'>X</button>
                     <p className='date'>{props.date}</p>
-                    <h1>{props.linkUrl}</h1>
+                    <h3>{props.header}</h3>
                     <p>{props.description}</p>
                     <button onClick={e => props.handleShowPreview(e)} className='preview-btn'>ZAPRI</button>
                 </div>

@@ -50,7 +50,7 @@ app.get('/api/v1/merch', async (req, res) => {
 
 app.post('/api/v1/news', async (req,res) => {
   try {
-    const results = await db.query(`INSERT INTO news(date, type, content, description) values ($1, $2, $3, $4) RETURNING *`, [req.body.date, req.body.type, req.body.content, req.body.description]);
+    const results = await db.query(`INSERT INTO news(date, type, header, content, description) values ($1, $2, $3, $4, $5) RETURNING *`, [req.body.date, req.body.type, req.body.header, req.body.content, req.body.description]);
 
     res.send(results);
 

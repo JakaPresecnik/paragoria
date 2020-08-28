@@ -7,6 +7,7 @@ class AddNews extends Component {
   state = {
     showPreview: false,
     type: null,
+    header: null,
     date: null,
     content: null,
     description: null,
@@ -31,9 +32,9 @@ class AddNews extends Component {
   }
 
   componentDidMount() {
-    const monthArray = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+    const monthArray = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
     const today = new Date();
-    this.setState({date: `${today.getDate()}-${monthArray[today.getMonth()]}-${today.getFullYear()}`})
+    this.setState({date: `${today.getDate()} ${monthArray[today.getMonth()]} ${today.getFullYear()}`})
   }
   handleShowPreview(e) {
     e.preventDefault()
@@ -41,6 +42,9 @@ class AddNews extends Component {
   }
   handleTypeChange(e) {
     this.setState({type: e.target.value})
+  }
+  handleHeaderChange(e) {
+    this.setState({header: e.target.value})
   }
   handleLinkUrlChange(e) {
     this.setState({content: e.target.value})
@@ -52,6 +56,7 @@ class AddNews extends Component {
     const data = {
       date: this.state.date,
       type: this.state.type,
+      header: this.state.header,
       content: this.state.content,
       description: this.state.description,
     }
@@ -61,7 +66,7 @@ class AddNews extends Component {
 
 
   render() {
-    const {showPreview, type, content, description, date} = this.state;
+    const {showPreview, type, header, content, description, date} = this.state;
 
     return (
       <section>
@@ -74,6 +79,7 @@ class AddNews extends Component {
           showPreview={showPreview}
           type={type}
           date={date}
+          header={header}
           content={content}
           description={description}
           handleShowPreview={this.handleShowPreview.bind(this)}
@@ -90,12 +96,14 @@ class AddNews extends Component {
                 <option value='plain'>Navaden post z naslovom</option>
               </optgroup>
             </select>
-            <label htmlFor='link' style={{width: '100%'}}>Link do slike - lahko je tudi link slike na facebooku, youtube videa, ali navaden text kot naslov:</label>
-            <input onChange={e => this.handleLinkUrlChange(e)} type='text' id='link' placeholder='Image URL/Youtube URL/Header' />
-            <label htmlFor='link' style={{width: '100%'}}>Opis dogodka, napoved dogodka, datum, lokacija, kje, kdaj, zakaj...:</label>
+            <label htmlFor='header' style={{width: '100%'}}>Naslov:</label>
+            <input onChange={e => this.handleHeaderChange(e)} type='text' id='header' placeholder='Header' />
+            <label htmlFor='content' style={{width: '100%'}}>Link do slike - lahko je tudi link slike na facebooku, youtube videa:</label>
+            <input disabled={type === 'plain'} onChange={e => this.handleLinkUrlChange(e)} type='text' id='content' placeholder='Image URL/Youtube URL' />
+            <label htmlFor='description' style={{width: '100%'}}>Opis dogodka, napoved dogodka, datum, lokacija, kje, kdaj, zakaj...:</label>
             <textarea onChange={e => this.handleDescriptionChange(e)} placeholder='Text Description...'/>
 
-            <button disabled={!type || !content || !description} onClick={e => this.handlePostNews()}>DODAJ</button>
+            <button disabled={!type || !description} onClick={e => this.handlePostNews()}>DODAJ</button>
             <button onClick={e => this.handleShowPreview(e)} className='preview-btn'>PREDOGLED</button>
           </form>
         </div>
