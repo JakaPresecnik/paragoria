@@ -202,8 +202,7 @@ form button:active {
 }
 
 .concerts {
-    width: 100%;
-    max-width: 350px;
+    width: 80vw;
     min-width: 280px;
     margin: 1em auto;
     padding: 1px 1em 0.5em 1em;
@@ -232,22 +231,25 @@ form button:active {
 }
 
 .show-date {
+    font-family: 'Open Sans', sans-serif;
     font-size: 0.9em;
     margin: 0.1em;
 }
 
 .bands {
-    font-size: 0.9em;
+    font-size: 1em;
     margin: 0.1em;
 }
 
 .show-loc {
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 1em;
     margin: 0.2em;
 }
 
 .bands {
+    font-family: 'Open Sans Condensed', sans-serif;
     color: #777;
 }
 

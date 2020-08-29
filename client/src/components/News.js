@@ -36,7 +36,6 @@ class News extends Component {
                     </div>
                     <NewsConcerts pastConcerts={data.previousConcertsData} upcomingConcerts={data.upcomingConcertsData} />
                     <NewsNews data={data.newsData}/>
-                    
                 </section>
             )
         }else {

@@ -17,18 +17,24 @@ INSERT INTO news (date, type, header, content, description)
 
 
 
-CREATE TABLE concerts (
+CREATE TABLE concerts(
     key SERIAL NOT NULL PRIMARY KEY,
     datetime TIMESTAMP NOT NULL,
-    location VARCHAR (50) NOT NULL,
-    description VARCHAR (100)
+    location VARCHAR(50) NOT NULL,
+    description VARCHAR(100)
 );
 
 INSERT INTO concerts (datetime, location, description)
-    VALUES('2018-05-05 22:00:00', 'Lokal Patriot, Novo Mesto,', 'Sarcom, Omega Sun, Paragoria');
+    VALUES('2015-07-22 19:00:00', 'Metal Days, Tolmin', '');
 
 INSERT INTO concerts (datetime, location, description)
-    VALUES('2018-06-06', 'Metaljot Raspaljot,, Laško', 'Decapitated, Noctiferia, Interceptor, Paragoria, Kaoz, Panikk, Valuk, ...');
+    VALUES('2016-01-15 19:00:00', 'DIRTY SKUNKS FEST, Orto Bar, Ljubljana', 'Curse of Instinct, In the Crossfire, Paragoria, Panikkk, Burn Fuse, ...');
+
+INSERT INTO concerts (datetime, location, description)
+    VALUES('2018-05-05 22:00:00', 'Lokal Patriot, Novo Mesto', 'Sarcom, Omega Sun, Paragoria');
+
+INSERT INTO concerts (datetime, location, description)
+    VALUES('2018-06-06', 'Metaljot Raspaljot, Laško', 'Decapitated, Noctiferia, Interceptor, Paragoria, Kaoz, Panikk, Valuk, ...');
 
 INSERT INTO concerts (datetime, location, description)
     VALUES('2018-11-29', 'Winter Days of Metal, Bohinjska Bistrica', 'Atrexial, Paragoria, Skálmöld, Alestorm, Igorrr');

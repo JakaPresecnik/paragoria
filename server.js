@@ -21,10 +21,13 @@ const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 // nove poti za pgdb
 //------------------------------------------------------------------------------------------------------------------------
 app.get('/api/v1/news', async (req,res) => {
+  
   try {
+
     const news = await db.query('SELECT * FROM news');
-    const previousConcerts = await db.query('SELECT * FROM concerts WHERE datetime < NOW() ORDER BY datetime DESC');
+    const previousConcerts = await db.query('SELECT * FROM concerts WHERE datetime < NOW() ORDER BY datetime DESC LIMIT 6');
     const upcomingConcerts = await db.query('SELECT * FROM concerts WHERE datetime >= NOW() ORDER BY datetime');
+ 
     res.send({
       status: 'sucess',
       newsData: news.rows.reverse(),
