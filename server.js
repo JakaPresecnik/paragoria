@@ -22,11 +22,17 @@ const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 //------------------------------------------------------------------------------------------------------------------------
 app.get('/api/v1/news', async (req,res) => {
   try {
-    const results = await db.query('SELECT * FROM news');
+    const news = await db.query('SELECT * FROM news');
+    const previousConcerts = await db.query('SELECT * FROM concerts WHERE datetime < NOW() ORDER BY datetime DESC');
+    const upcomingConcerts = await db.query('SELECT * FROM concerts WHERE datetime >= NOW() ORDER BY datetime');
     res.send({
       status: 'sucess',
-      newsData: results.rows,
-      results: results.rows.length
+      newsData: news.rows.reverse(),
+      newsLength: news.rows.length,
+      previousConcertsData: previousConcerts.rows,
+      previousConcertsLength: previousConcerts.rows.length,
+      upcomingConcertsData: upcomingConcerts.rows,
+      upcomingConcertsLength: upcomingConcerts.rows.length
     })
 
   }catch (err) {

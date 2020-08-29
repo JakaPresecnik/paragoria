@@ -4,7 +4,7 @@ section {
     color: #afafaf;
 }
 
-@media screen and (max-width: 482px) {
+@media screen and (max-width: 572px) {
   section {
     margin-top: 6em;
   }
@@ -201,6 +201,56 @@ form button:active {
     margin: auto;
 }
 
+.concerts {
+    width: 100%;
+    max-width: 350px;
+    min-width: 280px;
+    margin: 1em auto;
+    padding: 1px 1em 0.5em 1em;
+    border: 1px solid #632828;
+    background-color: rgba(99, 40, 40, 0.3);
+}
+
+.concerts h4 {
+    border-bottom: 1px solid #632828;
+    padding-bottom: 0.2em;
+    font-family: 'Metal Mania', cursive;
+    font-size: 1.4em;
+}
+
+.concert {
+    padding: 0.5em;
+}
+
+.featured {
+    background-color: rgba(99, 40, 40, 0.5);
+}
+
+.past-concert {
+    padding: 0.5em;
+    opacity: 0.63;
+}
+
+.show-date {
+    font-size: 0.9em;
+    margin: 0.1em;
+}
+
+.bands {
+    font-size: 0.9em;
+    margin: 0.1em;
+}
+
+.show-loc {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0.2em;
+}
+
+.bands {
+    color: #777;
+}
+
 .news {
     max-width: 700px;
     margin: auto;
@@ -213,7 +263,7 @@ form button:active {
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.2em;
-    color: #555;
+    color: #444;
 }
 .news-image {
   width: 100%;
@@ -242,6 +292,7 @@ form button:active {
     color: #a52121;
     text-shadow: 1px 1px #632828;
 }
+
 
 @media only screen and (min-width: 1118px) {
       .bio {

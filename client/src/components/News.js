@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ReactPlayer from 'react-player';
 import ReactLoading from "react-loading";
+import NewsNews from './NewsNews';
+import NewsConcerts from './NewsConcerts';
 
 class News extends Component {
     state = {
@@ -8,18 +9,18 @@ class News extends Component {
         loaded: false,
     }
 
-    retrieveNews = async () => {
+    retrieveData = async () => {
         const res = await fetch('/api/v1/news');
         try {
             const data = await res.json();
-            return data.newsData.reverse();
+            return data;
         } catch(error) {
             console.log('Error: ', error);
         } 
     }
 
     componentDidMount() {
-        this.retrieveNews()
+        this.retrieveData()
         .then(res => this.setState({data: res}))
         .then(() => this.setState({loaded: true}))
     }
@@ -33,40 +34,8 @@ class News extends Component {
                     <div className='section-header'>
                         <h2>NEWS AND UPDATES</h2>
                     </div>
-    
-                    {data.map((news) => {
-                        if(news.type === 'video') {
-                            return (
-                                <div key={news.key} className='news' >
-                                    <p className='date'>{news.date}</p>
-                                    <h3>{news.header}</h3>
-                                    <div className='news-video'>
-                                        <ReactPlayer className='news-video-box' url={news.content} />
-                                    </div>
-                                    <p>{news.description}</p>
-                                </div>
-                            )
-                        }else if(news.type === 'flyer') {
-                            return (
-                                <div  key={news.key} className='news'>
-                                    <p className='date'>{news.date}</p>
-                                    <h3>{news.header}</h3>
-                                    <a href={news.content}>
-                                    <img className='news-image' src={news.content} alt='News banner' />
-                                    </a>
-                                    <p>{news.description}</p>
-                                </div>
-                            )
-                        }else {
-                            return (
-                                <div  key={news.key} className='news'>
-                                    <p className='date'>{news.date}</p>
-                                    <h3>{news.header}</h3>
-                                    <p>{news.description}</p>
-                                </div>
-                            )
-                        }
-                    })}
+                    <NewsConcerts pastConcerts={data.previousConcertsData} upcomingConcerts={data.upcomingConcertsData} />
+                    <NewsNews data={data.newsData}/>
                     
                 </section>
             )
