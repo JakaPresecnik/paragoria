@@ -278,7 +278,7 @@ form button:active {
     overflow: hidden;
     transition:max-height 0.3s linear; 
     height: auto;
-    max-height: 1000px;
+    max-height: 1200px;
 }
 .concert-icon {
     margin-bottom: -19px;
@@ -319,6 +319,12 @@ form button:active {
     .news-image {
       height: 150px;
     }
+}
+
+@media only screen and (max-width: 1118px) {
+    .concerts:nth-child(1) .concert {
+        margin-bottom: 1.1em;
+      }
 }
 
 .booking a {
