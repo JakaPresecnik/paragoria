@@ -5,7 +5,7 @@ function NewsNews (props) {
     const { data } = props;
 
     return (
-        <div>
+        <div className='news-info'>
             {data.map((news) => {
                 if(news.type === 'video') {
                     return (

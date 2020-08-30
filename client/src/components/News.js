@@ -34,8 +34,10 @@ class News extends Component {
                     <div className='section-header'>
                         <h2>NEWS AND UPDATES</h2>
                     </div>
-                    <NewsConcerts pastConcerts={data.previousConcertsData} upcomingConcerts={data.upcomingConcertsData} />
-                    <NewsNews data={data.newsData}/>
+                    <div className='news-container'>
+                        <NewsConcerts pastConcerts={data.previousConcertsData} upcomingConcerts={data.upcomingConcertsData} />
+                        <NewsNews data={data.newsData}/>
+                    </div>
                 </section>
             )
         }else {

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 function NewsConcerts (props) {
+    const [toggleClass, setToggleClass] = useState(false);
     const { pastConcerts, upcomingConcerts } = props;
 
     Date.prototype.addDays = function (days) {
         let date = new Date(this.valueOf());
         date.setDate(date.getDate() + days);
         return date;
+    }
+
+    function handleToggleClass (e) {
+        e.preventDefault();
+        setToggleClass(!toggleClass);
     }
     
     function addZero(i) {
@@ -20,9 +27,10 @@ function NewsConcerts (props) {
     const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
     return (
-        <div className='concerts'>
+        <div className={toggleClass ? 'concerts' : 'concerts hide-concerts'}>
+            <div><FaChevronDown onClick={(e) => handleToggleClass(e)} className={!toggleClass ? 'concert-icon show-concert-icon' : 'hide-concert-icon'} /></div>
             
-            <h4>Upcoming shows</h4>
+            <h4>CONCERTS:</h4>
             {upcomingConcerts.map((concert) => {
                 let concertDate = new Date(concert.datetime);
                 let concertDay = concertDate.getDate();
@@ -50,7 +58,7 @@ function NewsConcerts (props) {
                 }
             })}
 
-            <h4>Past Shows</h4>
+            <h4 className='past-shows'>Past Shows</h4>
             {pastConcerts.map((concert) => {
                 let concertDate = new Date(concert.datetime);
                 let concertDay = concertDate.getDate();
@@ -64,6 +72,7 @@ function NewsConcerts (props) {
                     </div>
                 )
             })}
+            <div><FaChevronUp onClick={(e) => handleToggleClass(e)} className={toggleClass ? 'concert-icon-up show-concert-icon' : 'hide-concert-icon'} /></div>
         </div>
     )
 }
