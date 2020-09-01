@@ -31,7 +31,7 @@ function NewsConcerts (props) {
             <div><FaChevronDown onClick={(e) => handleToggleClass(e)} className={!toggleClass ? 'concert-icon show-concert-icon' : 'hide-concert-icon'} /></div>
             
             <h4>CONCERTS:</h4>
-            {upcomingConcerts.map((concert) => {
+            {upcomingConcerts.length !== 0 ? upcomingConcerts.map((concert) => {
                 let concertDate = new Date(concert.datetime);
                 let concertDay = concertDate.getDate();
                 let concertMonth = concertDate.getMonth();
@@ -56,7 +56,11 @@ function NewsConcerts (props) {
                         </div>
                     )
                 }
-            })}
+            }) : (
+                <div className='concert'>
+                    <p className='no-results'>No upcoming concerts</p>
+                </div>
+            )}
 
             <h4 className='past-shows'>Past Shows</h4>
             {pastConcerts.map((concert) => {

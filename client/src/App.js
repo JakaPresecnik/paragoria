@@ -14,7 +14,7 @@ import Merch from './components/Merch';
 import Visuals from './components/Visuals';
 import ScrollToTop from './components/ScrollToTop'
 
-import AddNews from './components/AddNews';
+import Edit from './components/Edit';
 
 class App extends React.Component {
   state = {
@@ -48,7 +48,7 @@ class App extends React.Component {
                <Route path='/merch' component={Merch} />
                <Route path='/booking' component={Booking} />
 
-               <Route path='/addNews' component={AddNews} />
+               <Route path='/edit' component={Edit} />
              </Switch>
              <ReactPlayer url='https://soundcloud.com/on-parole/paragoria-from-carcass-to-soil' playing={false} width='70%' height='70px' style={{margin: '2em auto', maxWidth: '500px'}}/>
              <Footer shadeNavigation={this.state.shadeNavigation} />

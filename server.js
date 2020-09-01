@@ -25,8 +25,9 @@ app.get('/api/v1/news', async (req,res) => {
   try {
 
     const news = await db.query('SELECT * FROM news');
-    const previousConcerts = await db.query('SELECT * FROM concerts WHERE datetime < NOW() ORDER BY datetime DESC LIMIT 6');
+    
     const upcomingConcerts = await db.query('SELECT * FROM concerts WHERE datetime >= NOW() ORDER BY datetime');
+    const previousConcerts = await db.query('SELECT * FROM concerts WHERE datetime < NOW() ORDER BY datetime DESC LIMIT 6');
  
     res.send({
       status: 'sucess',
@@ -66,6 +67,17 @@ app.post('/api/v1/news', async (req,res) => {
   }catch(err) {
     console.log(err);
   }
+})
+
+app.post('/api/v1/concert', async (req,res) => {
+  console.log(req.body)
+  try {
+    const results = await db.query(`INSERT INTO concerts (datetime, location, description) VALUES ($1, $2, $3)`, [req.body.datetime, req.body.location, req.body.description]);
+
+    res.send(results);
+    }catch(err) {
+     console.log(err)
+    }
 })
 
 //---------------------------------------------------------------------------------------------------------------------

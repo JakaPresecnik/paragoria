@@ -1,3 +1,8 @@
+html {
+    --scrollbarBG: rgba(0, 0, 0, 0.1);
+    --thumbBG: #a52121;
+  }
+
 section {
     text-align: center;
     margin-top: 3em;
@@ -221,6 +226,9 @@ form button:active {
 .concert {
     padding: 0.5em;
 }
+.no-results {
+    font-size: 1.2em;
+}
 
 .featured {
     background-color: rgba(99, 40, 40, 0.5);
@@ -363,10 +371,27 @@ form button:active {
       .concerts {
         position: sticky;
         top: 2.5em;
+        overflow-y: auto;
         grid-column: 3 / 3;
         order: 2;
         width: 80%;
+        scrollbar-width: thin;
+        max-height: 90vh;
+        scrollbar-color: var(--thumbBG) var(--scrollbarBG);
       }
+      .concerts::-webkit-scrollbar {
+        width: 0.4em;
+      }
+       
+      .concerts::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+       
+      .concerts::-webkit-scrollbar-thumb {
+        background-color: #a52121;
+        outline: 1px solid #632828;
+      }
+
       .news-info {
           grid-column: 1 / 3;
       }
