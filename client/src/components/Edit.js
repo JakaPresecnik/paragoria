@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import AddNews from './AddNews';
 import AddConcert from './AddConcert';
+import auth from '../utils/auth';
 
 import '../styles/additional.css';
 
 class Edit extends Component {
+
     postNews = async (url = '', data = {}) => {
         const res = await fetch (url, {
           method: 'POST',
@@ -23,16 +25,26 @@ class Edit extends Component {
         }
     }
     render() {
+      
         return (
-            <section>
-                <div className='section-header'>
-                    <h2>Dodaj:</h2>
-                    <p>Dodaj novico ali koncert</p>
-                </div>
+          <section>
+              <div className='section-header'>
+                  <h2>Dodaj:</h2>
+                  <p>Dodaj novico ali koncert</p>
+              </div>
+                <button 
+                  onClick={() => {
+                    auth.logout(() => {
+                      this.props.history.push('/login');
+                    })
+                  }}
+                  className='logout' 
+                >LOGOUT</button>
+              
 
-                <AddNews postNews={this.postNews}/>
-                <AddConcert postConcert={this.postNews}/>
-            </section>
+              <AddNews postNews={this.postNews}/>
+              <AddConcert postConcert={this.postNews}/>
+          </section>
 
         )
     }
