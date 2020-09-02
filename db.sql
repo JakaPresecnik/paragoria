@@ -14,9 +14,6 @@ INSERT INTO news (date, type, header, content, description)
     VALUES('25 DECEMBER 2019', 'video', 'Paragoria - From the Studio', 'https://www.youtube.com/watch?v=PsLf10FESl4', '6 years after Decomposition of mind we are back in studio recording our 2nd album. Album will be out in the middle of 2020.');
 
 
-
-
-
 CREATE TABLE concerts(
     key SERIAL NOT NULL PRIMARY KEY,
     datetime TIMESTAMP NOT NULL,
@@ -48,10 +45,6 @@ INSERT INTO concerts (datetime, location, description)
 INSERT INTO concerts (datetime, location, description)
     VALUES('2019-03-30 21:00:00', 'Orto Bar, Ljubljana', 'Gonoba, Licence to Hate, Paragoria');
 
-
-
-
-
 CREATE TABLE merch(
     key SERIAL NOT NULL PRIMARY KEY,
     type VARCHAR(10) NOT NULL,
@@ -81,3 +74,9 @@ insert INTO merch (type, item, picture, picture_back, cost, instock)
 
 insert INTO merch (type, item, picture, picture_back, cost, instock)
     VALUES('shirt', 'CROSSBACK Girly', 'https://i.ibb.co/52zxd2D/crossbackgirlyfront.jpg', 'https://i.ibb.co/dGdSbTs/crossbackgirlyback.jpg', 15, FALSE);
+
+CREATE TABLE users(
+    user_id SERIAL PRIMARY KEY,
+    user_email VARCHAR(50) NOT NULL,
+    user_password VARCHAR(255) NOT NULL
+);

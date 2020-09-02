@@ -17,6 +17,11 @@ app.use(express.static(path.join(__dirname, 'client/build')))
 const port = process.env.PORT || 5001;
 
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
+// login poti, dashboard
+//---------------------------------------------------------------
+app.use('/auth', require('./routes/auth'));
+app.use('/dashboard', require('./routes/dashboard'));
+//--------------------------------------------------------------
 
 // nove poti za pgdb
 //------------------------------------------------------------------------------------------------------------------------
