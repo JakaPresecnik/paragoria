@@ -1,6 +1,6 @@
 .adding {
-    padding: 1.5em 0;
-    margin: 2em auto;
+    padding: 0;
+    margin: 1em auto;
     max-width: 800px;
 }
 .adding select {
@@ -40,6 +40,7 @@
 }
 
 .preview .preview-btn {
+    cursor: pointer;
     width: 7em;
     padding: 0.5em;
     font-size: 1.1em;
@@ -51,7 +52,6 @@
 }
 
 .preview button:hover {
-    cursor: pointer;
     background-color: #a52121;
     box-shadow: 2px 2px 8px #632828, -2px -2px 8px #632828;
 } 
@@ -63,4 +63,26 @@
     color: #afafaf;
     border: none;
     border-radius: 3px;
+}
+
+input:disabled {
+    opacity: 0.35;
+}
+button:disabled, button:disabled:hover {
+    background-color: #632828;
+    color: #a52121;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+h3 {
+    font-weight: bold;
+    text-shadow: 3px 2px 4px #a52121;
+}
+.fullW {
+    width: 100%;
+}
+
+.halfInput {
+    align-self: flex-end;
 }

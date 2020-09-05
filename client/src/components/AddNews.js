@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
 
-import '../styles/additional.css';
 import Preview from './Preview'
 
 class AddNews extends Component {
   state = {
     showPreview: false,
     type: null,
+    header: null,
     date: null,
     content: null,
     description: null,
   }
 
-  postNews = async (url = '', data = {}) => {
-    const res = await fetch (url, {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: {
-        'content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    try {
-      const newData = await res.json();
-      console.log('newData', newData);
-      return newData;
-    }catch(err) {
-      console.log('Error: ', err);
-    }
-  }
-
   componentDidMount() {
-    const monthArray = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+    const monthArray = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
     const today = new Date();
-    this.setState({date: `${today.getDate()}-${monthArray[today.getMonth()]}-${today.getFullYear()}`})
+    this.setState({date: `${today.getDate()} ${monthArray[today.getMonth()]} ${today.getFullYear()}`})
   }
   handleShowPreview(e) {
     e.preventDefault()
@@ -41,6 +23,9 @@ class AddNews extends Component {
   }
   handleTypeChange(e) {
     this.setState({type: e.target.value})
+  }
+  handleHeaderChange(e) {
+    this.setState({header: e.target.value})
   }
   handleLinkUrlChange(e) {
     this.setState({content: e.target.value})
@@ -52,35 +37,33 @@ class AddNews extends Component {
     const data = {
       date: this.state.date,
       type: this.state.type,
+      header: this.state.header,
       content: this.state.content,
       description: this.state.description,
     }
-    this.postNews('/api/v1/news', data)
+    this.props.postNews('/api/v1/news', data)
   }
 
 
 
   render() {
-    const {showPreview, type, content, description, date} = this.state;
+    const {showPreview, type, header, content, description, date} = this.state;
 
     return (
-      <section>
-        <div className='section-header'>
-          <h2>Dodaj v News:</h2>
-          <p>Dokler ni funkcijonalnosti za odstranjevanje sekcij novic sledi navodilom, če ne lahko cela sekcija zgleda narobe!</p>
-        </div>
+      <div>
 
         <Preview
           showPreview={showPreview}
           type={type}
           date={date}
+          header={header}
           content={content}
           description={description}
           handleShowPreview={this.handleShowPreview.bind(this)}
         />
 
         <div className='adding'>
-          <h3>Dodaj:</h3>
+          <h3>NEWS:</h3>
           <form className='news-form'>
           <select onChange={e => this.handleTypeChange(e)}>
               <optgroup label='Tip'>
@@ -90,16 +73,18 @@ class AddNews extends Component {
                 <option value='plain'>Navaden post z naslovom</option>
               </optgroup>
             </select>
-            <label htmlFor='link' style={{width: '100%'}}>Link do slike - lahko je tudi link slike na facebooku, youtube videa, ali navaden text kot naslov:</label>
-            <input onChange={e => this.handleLinkUrlChange(e)} type='text' id='link' placeholder='Image URL/Youtube URL/Header' />
-            <label htmlFor='link' style={{width: '100%'}}>Opis dogodka, napoved dogodka, datum, lokacija, kje, kdaj, zakaj...:</label>
+            <label htmlFor='header' className='fullW'>Naslov:</label>
+            <input onChange={e => this.handleHeaderChange(e)} type='text' id='header' placeholder='Header' />
+            <label htmlFor='content' className='fullW'>Link do slike - lahko je tudi link slike na facebooku, youtube videa:</label>
+            <input disabled={type === 'plain'} onChange={e => this.handleLinkUrlChange(e)} type='text' id='content' placeholder='Image URL/Youtube URL' />
+            <label htmlFor='description' className='fullW'>Opis dogodka, napoved dogodka, datum, lokacija, kje, kdaj, zakaj...:</label>
             <textarea onChange={e => this.handleDescriptionChange(e)} placeholder='Text Description...'/>
 
-            <button disabled={!type || !content || !description} onClick={e => this.handlePostNews()}>DODAJ</button>
+            <button disabled={!type || !description} onClick={e => this.handlePostNews()}>DODAJ</button>
             <button onClick={e => this.handleShowPreview(e)} className='preview-btn'>PREDOGLED</button>
           </form>
         </div>
-      </section>
+      </div>
     )
   }
 }
