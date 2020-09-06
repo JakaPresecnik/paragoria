@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import AudioPlayer from 'react-h5-audio-player';
+import '../styles/audio.scss';
 
 function NewsNews (props) {
     const { data } = props;
@@ -29,6 +31,18 @@ function NewsNews (props) {
                             <p>{news.description}</p>
                         </div>
                     )
+                }else if(news.type === 'audio') {
+                    return (
+                        <div  key={news.key} className='news'>
+                            <p className='date'>{news.date}</p>
+                            <h3>{news.header}</h3>
+                            <AudioPlayer
+                                src={`${news.content}dl=1`}
+                                onPlay={e => console.log("onPlay")}
+                            />
+                            <p>{news.description}</p>
+                        </div>
+                    )
                 }else {
                     return (
                         <div  key={news.key} className='news'>
@@ -38,6 +52,8 @@ function NewsNews (props) {
                         </div>
                     )
                 }
+                
+                
     })}
         </div>
     )

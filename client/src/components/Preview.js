@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
+import AudioPlayer from 'react-h5-audio-player';
 
 function Preview (props) {
 
@@ -42,6 +43,18 @@ function Preview (props) {
                     <h3>{props.header}</h3>
                     <p>{props.description}</p>
                     <button onClick={e => props.handleShowPreview(e)} className='preview-btn'>ZAPRI</button>
+                </div>
+            )
+        }else if (props.type === 'audio') {
+            return (
+                <div className='news'>
+                    <p className='date'>{props.date}</p>
+                    <h3>{props.header}</h3>
+                    <AudioPlayer
+                        src={`${props.audioUrl}dl=1`}
+                        onPlay={e => console.log("onPlay")}
+                    />
+                    <p>{props.description}</p>
                 </div>
             )
         }else {

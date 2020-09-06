@@ -15,7 +15,7 @@ class Auth {
     
                 const parseRes = await response.json()
     
-                console.log(parseRes)
+                
                 this.authenticated = true;
                 cb()
                 
@@ -40,7 +40,7 @@ class Auth {
     
                 const parseRes = await response.json()
     
-                console.log(parseRes)
+                
                 this.authenticated = true;
                 cb()
                 
