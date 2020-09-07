@@ -48,16 +48,6 @@ const Login = (props) => {
                         className='preview-btn' 
                         style={{marginTop: '2em'}}
                     >LOGIN</button>
-                    <button 
-                        onClick={(e) => {
-                            e.preventDefault()
-                            auth.register(inputs, () => {
-                                props.history.push('/edit');
-                            })
-                        }}
-                        className='preview-btn' 
-                        style={{marginTop: '2em'}}
-                    >REGISTER</button>
                 </form>
             </div>
         </section>
