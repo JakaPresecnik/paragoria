@@ -20,37 +20,44 @@ const Login = (props) => {
             </div>
             <div className='adding'>
                 <form style={{display: 'inline-block'}}>
-                <label htmlFor='email' className='fullW'>Email:</label>
-                <input 
-                    style={{width: '90%'}} 
-                    onChange={e => onChange(e)} 
-                    type='email' 
-                    name='email' 
-                    placeholder='Email'
-                    value={email}
-                />
-                <label htmlFor='password' className='fullW'>Geslo:</label>
-                <input 
-                    style={{width: '90%'}} 
-                    onChange={e => onChange(e)} 
-                    type='password' 
-                    name='password' 
-                    placeholder='Geslo'
-                    value={password} 
-                />
-                <button 
-                    onClick={(e) => {
-                        e.preventDefault()
-                        auth.login(inputs, () => {
-                            props.history.push('/edit');
-                        })
-                      }}
-                    className='preview-btn' 
-                    style={{marginTop: '2em'}}
-                >LOGIN</button>
-
-               
-
+                    <label htmlFor='email' className='fullW'>Email:</label>
+                    <input 
+                        style={{width: '90%'}} 
+                        onChange={e => onChange(e)} 
+                        type='email' 
+                        name='email' 
+                        placeholder='Email'
+                        value={email}
+                    />
+                    <label htmlFor='password' className='fullW'>Geslo:</label>
+                    <input 
+                        style={{width: '90%'}} 
+                        onChange={e => onChange(e)} 
+                        type='password' 
+                        name='password' 
+                        placeholder='Geslo'
+                        value={password} 
+                    />
+                    <button 
+                        onClick={(e) => {
+                            e.preventDefault()
+                            auth.login(inputs, () => {
+                                props.history.push('/edit');
+                            })
+                        }}
+                        className='preview-btn' 
+                        style={{marginTop: '2em'}}
+                    >LOGIN</button>
+                    <button 
+                        onClick={(e) => {
+                            e.preventDefault()
+                            auth.register(inputs, () => {
+                                props.history.push('/edit');
+                            })
+                        }}
+                        className='preview-btn' 
+                        style={{marginTop: '2em'}}
+                    >REGISTER</button>
                 </form>
             </div>
         </section>
