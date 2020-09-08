@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class AddConcert extends Component {
     state = {
-        date: null,
+        date: '',
         time: '',
-        location: null,
-        ostalo: null,
+        location: '',
+        ostalo: '',
     }
 
     handleDateChange(e) {
@@ -35,18 +35,39 @@ class AddConcert extends Component {
     }
 
     render() {
-        const {date, location} = this.state;
+        const {date, time, location, ostalo} = this.state;
         return (
             <div>
                 <h3>CONCERT:</h3>
                 <form className='news-form'>
                     <label style={{width: '100%'}}>Čas (am/pm) in datum:</label>
-                    <input onChange={e => this.handleDateChange(e)} type="date" id="date" style={{width: '50%'}} />
-                    <input onChange={e => this.handleTimeChange(e)} type="time" id="time" style={{width: '50%'}} />
+                    <input 
+                        onChange={e => this.handleDateChange(e)} 
+                        type="date" 
+                        id="date"
+                        value={date} 
+                        style={{width: '50%'}} />
+                    <input 
+                        onChange={e => this.handleTimeChange(e)} 
+                        type="time" 
+                        id="time" 
+                        value={time}
+                        style={{width: '50%'}} />
                     <label htmlFor='location'className='fullW' >Lokacija koncerta (in seveda lokal ali fest...):</label>
-                    <input onChange={e => this.handleLocationChange(e)} id='location' type='text' placeholder='Kje?'/>
+                    <input 
+                        onChange={e => this.handleLocationChange(e)} 
+                        id='location' 
+                        type='text' 
+                        value={location}
+                        placeholder='Kje?'/>
                     <label htmlFor='ostalo' className='fullW'>Ostalo(Ostali bandi....):</label>
-                    <input onChange={e => this.handleOstaloChange(e)} id='ostalo' type='text' placeholder='ostalo...' className='halfInput'/>
+                    <input 
+                        onChange={e => this.handleOstaloChange(e)} 
+                        id='ostalo' 
+                        type='text' 
+                        value={ostalo}
+                        placeholder='ostalo...' 
+                        className='halfInput'/>
                     <button disabled={!date || !location} onClick={e => this.handlePostConcert()}>DODAJ</button>
                 </form>
             </div>
