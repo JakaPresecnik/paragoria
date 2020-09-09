@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ReactPlayer from 'react-player';
+import { connect } from 'react-redux';
 
 import './styles/container.css';
 import './styles/section.css';
@@ -13,6 +14,7 @@ import Biography from './components/Biography';
 import Merch from './components/Merch';
 import Visuals from './components/Visuals';
 import ScrollToTop from './components/ScrollToTop'
+import ShoppingCart from './components/ShoppingCart';
 
 import Edit from './components/Edit';
 import Login from './components/Login';
@@ -34,12 +36,15 @@ class App extends React.Component {
   }
 
   render () {
+    const { shoppingCart } = this.props;
+
     return (
      <div className='container'>
        <div className='inner-container'>
          <div className='homepage-container'>
              <Nav shadeNavigation={this.state.shadeNavigation} />
              <ScrollToTop />
+             {Object.keys(shoppingCart).length > 0 && <ShoppingCart />}
              <Switch>
                <Route path='/' exact render={() => (
                  <Header shadeNavigation={this.state.shadeNavigation}/>
@@ -63,4 +68,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({shoppingCart}) => {
+  return {
+    shoppingCart
+  }
+}
+
+export default connect(mapStateToProps)(App);

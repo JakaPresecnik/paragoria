@@ -52,28 +52,25 @@ CREATE TABLE merch(
     picture VARCHAR(150) NOT NULL,
     picture_back VARCHAR(150),
     cost INTEGER NOT NULL,
-    instock BOOLEAN
-);
-
-CREATE TABLE shirtsize(
-    item_id INTEGER NOT NULL PRIMARY KEY,
+    xs_stock INTEGER,
     s_stock INTEGER,
     m_stock INTEGER,
     l_stock INTEGER,
-    xl_stock INTEGER
+    xl_stock INTEGER,
+    xxl_stock INTEGER
 );
 
-insert INTO merch (type, item, picture, picture_back, cost, instock)
-    VALUES('shirt', 'CROSSBACK T-shirt', 'https://i.ibb.co/VQjpYsH/crossbackfront.jpg', 'https://i.ibb.co/2cZ5hHQ/crossbackback.jpg', 15, FALSE);
+insert INTO merch (type, item, picture, picture_back, cost, xs_stock, s_stock, m_stock, l_stock, xl_stock, xxl_stock)
+    VALUES('shirt', 'CROSSBACK T-shirt', 'https://i.ibb.co/VQjpYsH/crossbackfront.jpg', 'https://i.ibb.co/2cZ5hHQ/crossbackback.jpg', 15, 5, 3, 0, 0, 0, 3);
 
-insert INTO merch (type, item, picture, picture_back, cost, instock)
-    VALUES('shirt', 'STARLOGO T-shirt', 'https://i.ibb.co/hDtGh02/starlogofront.jpg', 'https://i.ibb.co/WVWb9T9/starlogoback.jpg', 15, FALSE);
+insert INTO merch (type, item, picture, picture_back, cost, xs_stock, s_stock, m_stock, l_stock, xl_stock, xxl_stock)
+    VALUES('shirt', 'STARLOGO T-shirt', 'https://i.ibb.co/hDtGh02/starlogofront.jpg', 'https://i.ibb.co/WVWb9T9/starlogoback.jpg', 15, 5, 3, 0, 0, 0, 3);
 
-insert INTO merch (type, item, picture, picture_back, cost, instock)
-    VALUES('shirt', 'STARLOGO Girly', 'https://i.ibb.co/SypNrd0/starlogogirlyfront.jpg', 'https://i.ibb.co/L84098Q/starlogogirlyback.jpg', 15, FALSE);
+insert INTO merch (type, item, picture, picture_back, cost, xs_stock, s_stock, m_stock, l_stock, xl_stock, xxl_stock)
+    VALUES('shirt', 'STARLOGO Girly', 'https://i.ibb.co/SypNrd0/starlogogirlyfront.jpg', 'https://i.ibb.co/L84098Q/starlogogirlyback.jpg', 15, 5, 3, 0, 0, 0, 3);
 
-insert INTO merch (type, item, picture, picture_back, cost, instock)
-    VALUES('shirt', 'CROSSBACK Girly', 'https://i.ibb.co/52zxd2D/crossbackgirlyfront.jpg', 'https://i.ibb.co/dGdSbTs/crossbackgirlyback.jpg', 15, FALSE);
+insert INTO merch (type, item, picture, picture_back, cost, xs_stock, s_stock, m_stock, l_stock, xl_stock, xxl_stock)
+    VALUES('shirt', 'CROSSBACK Girly', 'https://i.ibb.co/52zxd2D/crossbackgirlyfront.jpg', 'https://i.ibb.co/dGdSbTs/crossbackgirlyback.jpg', 15, 5, 3, 0, 0, 0, 3);
 
 CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
