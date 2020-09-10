@@ -162,3 +162,21 @@
       grid-row: 3/4;
       grid-column: 2/4;
   }
+
+  .item-amount span strong {
+      padding-right: 0.8em;
+  }
+
+  .increment-icon {
+      cursor: pointer;
+      color: #a52121;
+      padding-left:0.6em;
+  }
+  .increment-icon:hover {
+      color: #bf3f3f;
+  }
+
+  .total {
+      display: inline;
+      margin-left: 2em;
+  }

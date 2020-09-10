@@ -61,7 +61,7 @@ CREATE TABLE merch(
 );
 
 insert INTO merch (type, item, picture, picture_back, cost, xs_stock, s_stock, m_stock, l_stock, xl_stock, xxl_stock)
-    VALUES('shirt', 'CROSSBACK T-shirt', 'https://i.ibb.co/VQjpYsH/crossbackfront.jpg', 'https://i.ibb.co/2cZ5hHQ/crossbackback.jpg', 15, 5, 3, 0, 0, 0, 3);
+    VALUES('shirt', 'CROSSBACK T-shirt', 'https://i.ibb.co/VQjpYsH/crossbackfront.jpg', 'https://i.ibb.co/2cZ5hHQ/crossbackback.jpg', 15, 0, 0, 0, 0, 0, 0);
 
 insert INTO merch (type, item, picture, picture_back, cost, xs_stock, s_stock, m_stock, l_stock, xl_stock, xxl_stock)
     VALUES('shirt', 'STARLOGO T-shirt', 'https://i.ibb.co/hDtGh02/starlogofront.jpg', 'https://i.ibb.co/WVWb9T9/starlogoback.jpg', 15, 5, 3, 0, 0, 0, 3);
