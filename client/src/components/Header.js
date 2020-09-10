@@ -4,6 +4,8 @@ import { FaSoundcloud, FaAmazon, FaBandcamp } from 'react-icons/fa'
 import logo from '../img/logo.png';
 import cd from '../img/last_album.png';
 
+import EditMerch from './EditMerch'
+
 class Header extends React.Component {
   state = {
     popUp: true,
@@ -19,8 +21,10 @@ class Header extends React.Component {
 
   render() {
     return (
+
             <header>
-                <img src={logo} alt='logo' />
+
+              <img src={logo} alt='logo' />
                 <div onMouseOver={() => this.handleShowBox()} onMouseLeave={() => this.handleHideBox()}>
                 <div className={this.state.popUp ? 'hiddenBox' : 'buyAlbum'}>
                       <ul>
@@ -31,7 +35,7 @@ class Header extends React.Component {
                   </div>
                   <img className='album-cover' src={cd} alt='Album cover' />
                 </div> 
-            </header>
+           </header> 
     )
   }
 }

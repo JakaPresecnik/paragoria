@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactLoading from 'react-loading';
 import Shirt from './Shirt';
+import { retrieveMerch } from '../utils/api';
 import '../styles/merch.css';
 
 class Merch extends Component {
@@ -9,25 +10,15 @@ class Merch extends Component {
         loaded: false
     }
 
-    retrieveMerch = async () => {
-        const res = await fetch('/api/v1/merch');
-        try {
-            const data = await res.json();
-            return data.merchData;
-        }catch(err) {
-            console.log('Error: ', err);
-        }
-    }
-
     componentDidMount() {
-        this.retrieveMerch()
+        retrieveMerch()
         .then(res => this.setState({data: res}))
         .then(() => this.setState({loaded: true}))
     }
     
     render() {
         const { data, loaded } = this.state;
-
+        
         if (loaded === true) {
             return (
                 <section>

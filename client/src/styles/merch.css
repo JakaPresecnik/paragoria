@@ -180,3 +180,32 @@
       display: inline;
       margin-left: 2em;
   }
+
+  table {
+      width: 100%;
+  }
+  tr {
+      width: 600px;
+  }
+  td {
+      padding: 0;
+      margin: 0;;
+  }
+  td input {
+      font-size: 0.8em;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+  }
+  .wider {
+    max-width: 320px;
+  }
+  .wide {
+    max-width: 170px;
+  }
+  .narrow {
+    max-width: 30px;
+  }
+  .narrower {
+    max-width: 30px;
+  }

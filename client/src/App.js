@@ -54,7 +54,7 @@ class App extends React.Component {
                <Route path='/visuals' component={Visuals} />
                <Route path='/merch' component={Merch} />
                <Route path='/booking' component={Booking} />
-
+               
                <Route path='/login' component={Login} />
                <ProtectedRoute path='/edit' component={Edit} />
              </Switch>

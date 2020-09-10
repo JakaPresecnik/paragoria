@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddNews from './AddNews';
 import AddConcert from './AddConcert';
+import EditMerch from './EditMerch';
 import auth from '../utils/auth';
 
 import '../styles/additional.css';
@@ -44,6 +45,7 @@ class Edit extends Component {
 
               <AddNews postNews={this.postNews}/>
               <AddConcert postConcert={this.postNews}/>
+              <EditMerch />
           </section>
 
         )
