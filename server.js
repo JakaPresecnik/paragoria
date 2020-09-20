@@ -25,6 +25,26 @@ app.use('/dashboard', require('./routes/dashboard'));
 
 // nove poti za pgdb
 //------------------------------------------------------------------------------------------------------------------------
+app.get('/api/v1/tabs', async (req,res) => {
+  try {
+    const tabs = await db.query('SELECT * FROM tabs')
+
+    res.send(tabs.rows[0])
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+app.put('/api/v1/tabs', async (req,res) => {
+  try {
+    const tab = await db.query('UPDATE tabs SET show = $1', [req.body.tabs])
+    
+    res.send(tab)
+  } catch (error) {
+    console.log(error);
+  }
+})
+
 app.get('/api/v1/news', async (req,res) => {
   
   try {

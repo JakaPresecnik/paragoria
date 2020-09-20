@@ -4,8 +4,6 @@ import { FaSoundcloud, FaAmazon, FaBandcamp } from 'react-icons/fa'
 import logo from '../img/logo.png';
 import cd from '../img/last_album.png';
 
-import EditMerch from './EditMerch'
-
 class Header extends React.Component {
   state = {
     popUp: true,

@@ -59,12 +59,13 @@ class Shirt extends React.Component {
                         <form>
                             <select onChange={e => this.handleChange(e)}>
                                 <option hidden>Select size</option>
-                                <option disabled={!shirt.xs_stock}>XS</option>
-                                <option disabled={!shirt.s_stock}>S</option>
-                                <option disabled={!shirt.m_stock}>M</option>
-                                <option disabled={!shirt.l_stock}>L</option>
-                                <option disabled={!shirt.xl_stock}>XL</option>
-                                <option disabled={!shirt.xxl_stock}>XXL</option>
+                                <option hidden={!shirt.xs_stock}>XS</option>
+                                <option hidden={!shirt.s_stock}>S</option>
+                                <option hidden={!shirt.m_stock}>M</option>
+                                <option hidden={!shirt.l_stock}>L</option>
+                                <option hidden={!shirt.xl_stock}>XL</option>
+                                <option hidden={!shirt.xxl_stock}>XXL</option>
+                                <option hidden={shirt.xs_stock || shirt.s_stock || shirt.m_stock || shirt.l_stock || shirt.xl_stock || shirt.xxl_stock} disabled>Sold out</option>
                             </select>
                             <button 
                                 disabled={!size} 

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import ReactLoading from "react-loading";
 import { FaMinusCircle, FaSave, FaPlusCircle } from 'react-icons/fa';
-import { retrieveMerch, deleteMerch, addMerch, updateMerch } from '../utils/api';
+import { retrieveMerch, deleteMerch, addMerch, updateMerch, retrieveTabs, updateTabs } from '../utils/api';
 
 const EditMerch = (props) => {
     const [data, setData] = useState({});
+    const [tabs, setTabs] = useState(false);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        retrieveTabs()
+        .then(res => setTabs(res.show))
         retrieveMerch()
         .then(res => setData(res))
         .then(() => setLoading(false))
@@ -23,6 +26,15 @@ const EditMerch = (props) => {
             }
         })
         setData([...newData])
+    }
+
+    const toggleMerch = () => {
+        setTabs(!tabs)
+    }
+
+    const handleToggleTabs = (tabs) => {
+        updateTabs({tabs})
+        .then(() => alert('SPREMENJENO!\n\n Spremembe bodo vidne, ko se stran osveži!'))
     }
 
     const handleDeleteMerch = (i) => {
@@ -69,6 +81,9 @@ const EditMerch = (props) => {
         return (
             <div className='adding'>
                 <h3>MERCH:</h3>
+                <input type="checkbox" name='merch' checked={tabs} onChange={() => toggleMerch()}/>
+                <label htmlFor='merch'>Pokaži MERCH tab</label>
+                <FaSave title='Shrani spremembe' className='increment-icon' onClick={() => handleToggleTabs(tabs)}/>
                 <table style={{color: 'white'}}>
                     <thead>
                         <tr>

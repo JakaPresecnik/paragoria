@@ -77,3 +77,10 @@ CREATE TABLE users(
     user_email VARCHAR(50) NOT NULL,
     user_password VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE tabs(
+    tab VARCHAR(15) PRIMARY KEY,
+    show BOOLEAN
+);
+
+INSERT INTO tabs(tab, show) VALUES('merch', false);
