@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FaShoppingCart, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 import { addItemAmount, removeItemAmount, removeItem } from '../actions/merchStoreAction';
+import ShippingForm from './ShippingForm';
 
 class ShoppingCart extends Component {
 
     state = {
         cart: false,
-        total: 0
+        total: 0,
+        order: false
     }
 
     handleShowItems = () => {
@@ -23,11 +25,12 @@ class ShoppingCart extends Component {
             this.props.dispatch(removeItemAmount({ picture, item, cost, size, id }));
         }else {
             this.props.dispatch(removeItem(id));
-            console.log(id)
         }
-        
     }
 
+    handleShowOrder = () => {
+        this.setState((ps) => ({order: !ps.order}))
+    }
 
     render() {
         const {numOfItems, items} = this.props;
@@ -53,8 +56,9 @@ class ShoppingCart extends Component {
                                 <span>{cost * amount} €</span></p>
                         </div>
                     )})}
-                    <button className= 'order'>ORDER</button>
-                    <p className='total'>TOTAL: {total} €</p>
+                    {!this.state.order && <button className= 'order' onClick={this.handleShowOrder}>ORDER</button>}
+                    <p className='total'>TOTAL: {total} € + shipping</p>
+                    {this.state.order && <ShippingForm hide={this.handleShowOrder} />}
                 </div>}
             </div>
             

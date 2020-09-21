@@ -24,6 +24,7 @@ class Merch extends Component {
                 <section>
                     <div className='section-header'>
                         <h2>MERCH</h2>
+                        <p>Shipping cost is not included.</p>
                     </div>
                     <div className='shirts'>
                         {data.map(item => (
