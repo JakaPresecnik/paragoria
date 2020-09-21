@@ -4,8 +4,10 @@ const app = express();
 
 const cors = require('cors');
 const db = require('./db');
+const {transporter, mailOptions} = require('./mail');
 
 const bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -22,6 +24,26 @@ const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 app.use('/auth', require('./routes/auth'));
 app.use('/dashboard', require('./routes/dashboard'));
 //--------------------------------------------------------------
+
+// poti za pošiljanje mailov
+//---------------------------------------------------------------------------------------------------------------------
+
+app.post('/api/v1/postorder', async (req, res) => {
+  try {
+    transporter.sendMail(mailOptions(req.body), (err, info) => {
+    if (err) {
+      console.log('There was an error. Try again');
+    }else {
+      console.log('Order sent!')
+      res.send(true);
+    }
+});
+    
+  } catch (err) {
+    console.log(err);
+  }
+})
+//---------------------------------------------------------------------------------------------------------------------
 
 // nove poti za pgdb
 //------------------------------------------------------------------------------------------------------------------------

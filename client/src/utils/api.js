@@ -85,3 +85,14 @@ export const updateMerch = async (data = {}) => {
     console.log('Error: ', err);
   }
 }
+
+export const sendOrder = async (data = {}) => {
+  const res = await fetch ('/api/v1/postorder', {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+      'content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+}

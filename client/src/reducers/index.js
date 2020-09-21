@@ -1,4 +1,4 @@
-import { ADD_ITEM, ADD_ITEM_AMOUNT, REMOVE_ITEM, REMOVE_ITEM_AMOUNT } from '../actions/merchStoreAction';
+import { ADD_ITEM, ADD_ITEM_AMOUNT, REMOVE_ITEM, REMOVE_ITEM_AMOUNT, EMPTY_CART } from '../actions/merchStoreAction';
 
 export default function merchStore(state = { shoppingCart: {} }, action) {
     switch(action.type) {
@@ -41,7 +41,13 @@ export default function merchStore(state = { shoppingCart: {} }, action) {
                             }
                     }
             }
-            
+
+        case EMPTY_CART:
+            return {
+                ...state,
+                    shoppingCart: { }
+            }
+
         default:
             return state
     }

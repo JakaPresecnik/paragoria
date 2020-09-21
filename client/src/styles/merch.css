@@ -1,4 +1,8 @@
-
+html {
+    --scrollbarBG: rgba(0, 0, 0, 0.1);
+    --thumbBG: #a52121;
+  }
+  
 .rotate, .show:active {
     -webkit-transform: rotateY( 180deg );
             transform: rotateY( 180deg );
@@ -129,6 +133,10 @@
   }
 
   .cart-items {
+    overflow-y: auto;
+    max-height: 80vh;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
     border: 1px solid #a52121;
     background-color: rgba(40, 15, 15, 0.7);
     padding: 0.5em;
