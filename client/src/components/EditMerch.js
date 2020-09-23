@@ -57,7 +57,6 @@ const EditMerch = (props) => {
     }
 
     const addRow = () => {
-        let key = 52239;
         const newData = {
             type: 'shirt',
             item: '',
@@ -71,7 +70,6 @@ const EditMerch = (props) => {
             xs_stock: 0,
             xxl_stock: 0,
         }
-        key++;
         setData([...data, newData]);
     }
 

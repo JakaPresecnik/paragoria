@@ -48,6 +48,7 @@ class App extends React.Component {
       return (
         <div className='container'>
           <div className='inner-container'>
+            <div className='cir'></div>
             <div className='homepage-container'>
                 <Nav shadeNavigation={this.state.shadeNavigation} merch={this.state.merch} />
                 <ScrollToTop />
@@ -65,7 +66,7 @@ class App extends React.Component {
                   <Route path='/login' component={Login} />
                   <ProtectedRoute path='/edit' component={Edit} />
                 </Switch>
-                <ReactPlayer url='https://soundcloud.com/on-parole/paragoria-from-carcass-to-soil' playing={false} width='70%' height='70px' style={{margin: '2em auto', maxWidth: '500px'}}/>
+                <ReactPlayer className='pos' url='https://soundcloud.com/on-parole/paragoria-from-carcass-to-soil' playing={false} width='70%' height='70px' style={{margin: '2em auto', maxWidth: '500px'}}/>
                 <Footer shadeNavigation={this.state.shadeNavigation} />
    
             </div>

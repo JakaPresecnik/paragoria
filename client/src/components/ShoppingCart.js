@@ -46,7 +46,7 @@ class ShoppingCart extends Component {
                         total += amount * cost;
                         return(
                         <div key={id} className='grid-items'>
-                            <img src={picture} />
+                            <img src={picture} alt={item}/>
                             <p className='item-name'>{item}</p>
                             <p className='item-size'><span>Size: {size}</span></p>
                             <p className='item-amount'>
@@ -70,6 +70,7 @@ const mapStateToProps = ({shoppingCart}) => {
     let numOfItems = 0;
     Object.keys(shoppingCart).map((itemId) => {
         numOfItems += shoppingCart[itemId].amount;
+        return numOfItems;
     })
     return {
         items: shoppingCart,
